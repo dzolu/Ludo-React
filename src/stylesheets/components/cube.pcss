@@ -1,0 +1,163 @@
+$top:8.66665px;
+$dotDemension:20px;
+.cube {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: relative;
+    .dot {
+        background-color: black;
+        border-radius: 50%;
+        width: $dotDemension;
+        height: $dotDemension;
+        position: absolute;
+    }
+    &.one {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        .dot2,
+        .dot3,
+        .dot4,
+        .dot5,
+        .dot6 {
+            display: none;
+        }
+    }
+    &.two {
+        $twoPos: 15px;
+        .dot1 {
+            top: $twoPos;
+            left: $twoPos;
+        }
+        .dot2 {
+            right: $twoPos;
+            bottom: $twoPos;
+        }
+        .dot3,
+        .dot4,
+        .dot5,
+        .dot6 {
+            display: none;
+        }
+    }
+    &.three {
+        .dot3,
+        .dot4,
+        .dot5 {
+            display: none;
+        }
+        .dot1,
+        .dot2,
+        .dot6 {
+            position: absolute;
+        }
+        .dot1 {
+            top: $top;
+            left: 10px;
+        }
+        .dot2 {
+            left: 40px;
+            top: $top*2+$dotDemension;
+        }
+        .dot6 {
+            right: 10px;
+            top: $top*3+$dotDemension*2;
+        }
+    }
+    &.four {
+        //vertical
+        .dot1,
+        .dot3 {
+            top: 10px
+        }
+        //vertical
+        .dot2,
+        .dot4 {
+            bottom: 10px;
+        }
+        //horizontal
+        .dot1,
+        .dot2 {
+            left: 10px;
+        }
+        //horizontal
+        .dot3,
+        .dot4 {
+            right: 10px;
+        }
+        .dot5,
+        .dot6 {
+            display: none;
+        }
+    }
+    &.five {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        //vertical
+        .dot1,
+        .dot3 {
+            top: 10px
+        }
+        //vertical
+        .dot2,
+        .dot4 {
+            bottom: 10px;
+        }
+        //horizontal
+        .dot1,
+        .dot2 {
+            left: 10px;
+        }
+        //horizontal
+        .dot3,
+        .dot4 {
+            right: 10px;
+        }
+        .dot6 {
+            display: none;
+        }
+    }
+    &.six {
+        .dot1,
+        .dot2,
+        .dot3,
+        .dot4,
+        .dot5,
+        .dot6 {
+            position: absolute;
+        }
+        .dot1,
+        .dot2,
+        .dot3 {
+            left: 15px;
+        }
+        .dot4,
+        .dot5,
+        .dot6 {
+            right: 15px;
+        }
+        .dot1,
+        .dot4 {
+            top: $top;
+        }
+        .dot2,
+        .dot5 {
+            top: $top*2+$dotDemension;
+        }
+        .dot3,
+        .dot6 {
+            top: $top*3+$dotDemension*2;
+        }
+    }
+}
+
+.throw {
+    margin-top: 20px;
+}

@@ -1,0 +1,50 @@
+@import '../abstracts/variables.scss';
+$pawnSize:55px;
+$pawnBorder:6px;
+
+.pawn {
+    width: 0;
+    height: 0;
+    position: relative;
+    &:before,
+    &:after {
+        width: 0;
+        height: 0;
+        content: '';
+        border-style: solid;
+        border-color: transparent;
+        position: absolute;
+     top: -24px;
+        left: 0;
+    }
+    &:before {
+           border-width: 0 17px 55px;
+        z-index: 2;
+      top: -20px;
+    left: 6px
+    }
+    &:after {
+         border-width: 0 17px+$pawnBorder 55px+$pawnBorder;
+        border-bottom-color: black;
+    }
+    &.blue {
+        &:before {
+            border-bottom-color: $blue;
+        }
+    }
+    &.red {
+        &:before {
+            border-bottom-color: $red;
+        }
+    }
+    &.yellow {
+        &:before {
+            border-bottom-color: $yellow;
+        }
+    }
+    &.green {
+        &:before {
+            border-bottom-color: $green;
+        }
+    }
+}
