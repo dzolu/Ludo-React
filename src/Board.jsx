@@ -25,8 +25,10 @@ class Board extends Component{
                 <Position positionref={baseBlue[1]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+        <div className="placeOnBoard">
+                <div className="circle circle--placeholder"></div>
+        </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[38]}/>
@@ -42,8 +44,8 @@ class Board extends Component{
                 <Position positionref={board[0]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle red home">
                 <Position positionref={baseRed[0]}/>
@@ -68,8 +70,8 @@ class Board extends Component{
                 <Position positionref={baseBlue[3]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[37]}/>
@@ -85,8 +87,8 @@ class Board extends Component{
                 <Position positionref={board[1]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle red">
                 <Position positionref={baseRed[2]}/>
@@ -101,10 +103,10 @@ class Board extends Component{
     {/*
     <!-- 3 -->*/}
     <div className="row">
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[36]}/>
@@ -120,18 +122,18 @@ class Board extends Component{
                 <Position positionref={board[2]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
     </div>
     {/*
     <!-- 4 -->*/}
     <div className="row">
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[35]}/>
@@ -147,10 +149,10 @@ class Board extends Component{
                 <Position positionref={board[3]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
     </div>
     {/*
     <!-- 5 -->*/}
@@ -239,7 +241,7 @@ class Board extends Component{
                 <Position positionref={homeBlue[3]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle green">
                 <Position positionref={homeGreen[3]}/>
@@ -328,10 +330,10 @@ class Board extends Component{
     {/*
     <!-- 8 -->*/}
     <div className="row">
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[23]}/>
@@ -347,18 +349,18 @@ class Board extends Component{
                 <Position positionref={board[15]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
     </div>
     {/*
     <!-- 9 -->*/}
     <div className="row">
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[22]}/>
@@ -374,10 +376,10 @@ class Board extends Component{
                 <Position positionref={board[16]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
     </div>
     {/*
     <!-- 10 -->*/}
@@ -393,8 +395,8 @@ class Board extends Component{
 
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle white">
                 <Position positionref={board[21]}/>
@@ -412,7 +414,7 @@ class Board extends Component{
         </div>
         <div className="placeOnBoard">
         </div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle green home">
                 <Position positionref={baseGreen[0]}/>
@@ -437,8 +439,8 @@ class Board extends Component{
                 <Position positionref={baseYellow[3]}/>
             </div>
         </div>
-        <div className="placeOnBoard"></div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle yellow" id="yellow">
                 <Position positionref={board[20]}/>
@@ -456,7 +458,7 @@ class Board extends Component{
         </div>
         <div className="placeOnBoard">
         </div>
-        <div className="placeOnBoard"></div>
+          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
             <div className="circle green home">
                 <Position positionref={baseGreen[2]}/>
