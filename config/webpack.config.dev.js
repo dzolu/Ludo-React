@@ -138,8 +138,8 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.css$/,
-        loader: 'style!css?importLoaders=1'
+        test: /\.(css|pcss)$/,
+        loader: 'style!css?importLoaders=1!postcss'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -163,15 +163,22 @@ module.exports = {
   // We use PostCSS for autoprefixing only.
   postcss: function () {
     return [
-        autoprefixer({
+      require('postcss-import'),
+      require('postcss-functions'),
+      require('postcss-mixins'),
+      require('postcss-simple-vars'),
+      require('postcss-flexbugs-fixes'),
+      autoprefixer({
         browsers: [
           '>1%',
           'last 4 versions',
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
-      })
-
+      }), ,
+      require('postcss-calc'),
+      require('postcss-nesting'),
+      require('postcss-nested')
     ];
   },
   plugins: [

@@ -12,7 +12,7 @@ class Board extends Component{
         const baseGreen= [];
         const homeGreen= [];
         return (
-<div>
+<div className="container">
 
     <div className="row">
         <div className="placeOnBoard">

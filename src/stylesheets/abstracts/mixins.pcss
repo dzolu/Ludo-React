@@ -1,0 +1,111 @@
+
+@import "variables.pcss";
+
+
+@define-mixin make-custom-grid($columns) {
+    width: percentage($columns/$grid-columns);
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@define-mixin make-right-offset($columns) {
+    margin-right: percentage($columns/$grid-columns);
+}
+
+
+@define-mixin headerStyles {
+    font-family: $lato;
+    font-weight: 700;
+    font-size: (30em/$remSize);
+    color: $darkGrey;
+}
+
+@define-mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@define-mixin list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+@define-mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; 
+    height: auto; 
+}
+@define-mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; 
+        display: table; 
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@define-mixin textStyles {
+    font-family: $lato;
+    font-weight: 400;
+    font-size: 1em;
+    color: $darkGrey;
+}
+
+@define-mixin placeholderColor($color: white, $font: "gothamBook") {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+
+    &:-moz-placeholder { 
+        color: $color;
+        font-family: $font;
+    }
+
+    &::-moz-placeholder { 
+        color: $color;
+        font-family: $font;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+}
+
+@define-mixin centerVerticaly() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@define-mixin imgResponsive() {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        width: 100%;
+    }
+}
+
+@define-mixin circle($size, $border: 1px solid white,$backgroundColor: white) {
+    display: block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: $border;
+    background-color: $backgroundColor;
+}
+
+
+
+
