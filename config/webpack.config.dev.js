@@ -1,6 +1,6 @@
 'use strict';
 
-var autoprefixer = require('autoprefixer');
+
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -160,27 +160,7 @@ module.exports = {
     ]
   },
 
-  // We use PostCSS for autoprefixing only.
-  postcss: function () {
-    return [
-      require('postcss-import'),
-      require('postcss-functions'),
-      require('postcss-mixins'),
-      require('postcss-simple-vars'),
-      require('postcss-flexbugs-fixes'),
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ]
-      }), ,
-      require('postcss-calc'),
-      require('postcss-nesting'),
-      require('postcss-nested')
-    ];
-  },
+
   plugins: [
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
