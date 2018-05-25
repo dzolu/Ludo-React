@@ -7,8 +7,10 @@ const Pawn= (props)=>{
     )
 }
 
-export default Pawn;
+
 Pawn.propTypes={
     color: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired
 }
+
+export default Pawn;
