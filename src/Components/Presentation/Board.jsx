@@ -1,5 +1,7 @@
 import React, { Component } from "react"; 
 import Position from './Position'
+import * as ColorTypes from "./../../Types/ColorTypes"
+import * as PositionTypes from "./../../Types/PositionTypes"
 class Board extends Component{ 
     render(){ 
         const board=[56]; 
@@ -16,88 +18,66 @@ class Board extends Component{
 
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle blue home">   
-                <Position positionref={baseBlue[0]}/>
-            </div>
+                <Position {...{id:0, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue home">
-                <Position positionref={baseBlue[1]}/>
-            </div>
+            <Position {...{id:1, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
         </div>
         <div className="placeOnBoard">
                 <div className="circle circle--placeholder"></div>
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[38]}/>
-            </div>
+        <Position {...{id:38, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+          
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[39]}/>
-            </div>
+        <Position {...{id:39, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={board[0]}/>
-            </div>
+        <Position {...{id:0, color: ColorTypes.COLOR_RED, type:PositionTypes.BOARD_TYPE}}   />
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle red home">
-                <Position positionref={baseRed[0]}/>
-            </div>
+            <Position {...{id:0, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />    
         </div>
         <div className="placeOnBoard">
-            <div className="circle red home">
-                <Position positionref={baseRed[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />
         </div>
     </div>
     {/*
     <!-- 2 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle blue home">
-                <Position positionref={baseBlue[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue home">
-                <Position positionref={baseBlue[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
+        
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[37]}/>
-            </div>
+            <Position {...{id:37, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={homeRed[0]}/>
-            </div>
+            <Position {...{id:0, color: ColorTypes.COLOR_RED, type:PositionTypes.BOARD_TYPE}}   />   
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={baseRed[2]}/>
-            </div>
+                 <Position {...{id:3, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />
+
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={baseRed[3]}/>
-            </div>
+                    <Position {...{id:4, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />
         </div>
     </div>
     {/*
@@ -108,19 +88,15 @@ class Board extends Component{
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[36]}/>
-            </div>
+        <Position {...{id:36, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={homeRed[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_RED, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
@@ -135,19 +111,15 @@ class Board extends Component{
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[35]}/>
-            </div>
+        <Position {...{id:35, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+          
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={homeRed[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_RED, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
@@ -158,173 +130,133 @@ class Board extends Component{
     <!-- 5 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle blue">
-                <Position positionref={board[30]}/>
-            </div>
+        <Position {...{id:30, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[31]}/>
-            </div>
+        <Position {...{id:31, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[32]}/>
-            </div>
+        <Position {...{id:32, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[33]}/>
-            </div>
+        <Position {...{id:33, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[34]}/>
-            </div>
+        <Position {...{id:34, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle red">
-                <Position positionref={homeRed[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_RED, type:PositionTypes.HOME_TYPE}}   />
+          
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[4]}/>
-            </div>
+        <Position {...{id:4, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[5]}/>
-            </div>
+        <Position {...{id:5, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[6]}/>
-            </div>
+        <Position {...{id:6, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[7]}/>
-            </div>
+        <Position {...{id:7, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[8]}/>
-            </div>
+        <Position {...{id:8, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
     </div>
     {/*
     <!-- 6 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[29]}/>
-            </div>
+        <Position {...{id:39, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue">
-                <Position positionref={homeBlue[0]}/>
-            </div>
+        <Position {...{id:0, color: ColorTypes.COLOR_BLUE, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue">
-                <Position positionref={homeBlue[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_BLUE, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue">
-                <Position positionref={homeBlue[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_BLUE, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle blue">
-                <Position positionref={homeBlue[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_BLUE, type:PositionTypes.HOME_TYPE}}   />
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle green">
-                <Position positionref={homeGreen[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_GREEN, type:PositionTypes.HOME_TYPE}}   />
+        
         </div>
         <div className="placeOnBoard">
-            <div className="circle green">
-                <Position positionref={homeGreen[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_GREEN, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle green">
-                <Position positionref={homeGreen[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_GREEN, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle green">
-                <Position positionref={homeGreen[0]}/>
-            </div>
+        <Position {...{id:0, color: ColorTypes.COLOR_GREEN, type:PositionTypes.HOME_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[9]}/>
-            </div>
+        <Position {...{id:9, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+          
         </div>
     </div>
     {/*
     <!-- 7 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[28]}/>
-            </div>
+        <Position {...{id:28, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[27]}/>
-            </div>
+        <Position {...{id:27, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+        
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[26]}/>
-            </div>
+        <Position {...{id:26, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+  
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[25]}/>
-            </div>
+        <Position {...{id:25, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[24]}/>
-            </div>
+        <Position {...{id:24, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+          
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={homeYellow[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.HOME_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[14]}/>
-            </div>
+        <Position {...{id:14, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[13]}/>
-            </div>
+        <Position {...{id:13, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[12]}/>
-            </div>
+        <Position {...{id:12, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[11]}/>
-            </div>
+        <Position {...{id:11, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle green">
-                <Position positionref={board[10]}/>
-            </div>
+                <Position {...{id:10, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BOARD_TYPE}}   />
         </div>
     </div>
     {/*
@@ -335,19 +267,16 @@ class Board extends Component{
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[23]}/>
-            </div>
+        <Position {...{id:23, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={homeYellow[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.HOME_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[15]}/>
-            </div>
+        <Position {...{id:15, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
@@ -362,19 +291,16 @@ class Board extends Component{
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[22]}/>
-            </div>
+        <Position {...{id:22, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={homeYellow[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.HOME_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[16]}/>
-            </div>
+        <Position {...{id:16, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
@@ -385,89 +311,67 @@ class Board extends Component{
     <!-- 10 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={baseYellow[0]}/>
-            </div>
+        <Position {...{id:0, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={baseYellow[1]}/>
-
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[21]}/>
-            </div>
+        <Position {...{id:21, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow">
-                <Position positionref={homeYellow[3]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.HOME_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[17]}/>
-            </div>
+        <Position {...{id:17, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+           
         </div>
         <div className="placeOnBoard">
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle green home">
-                <Position positionref={baseGreen[0]}/>
-            </div>
+        <Position {...{id:0, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle green home">
-                <Position positionref={baseGreen[1]}/>
-            </div>
+        <Position {...{id:1, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
         </div>
     </div>
     {/*
     <!-- 11 -->*/}
     <div className="row">
         <div className="placeOnBoard">
-            <div className="circle yellow home">
-                <Position positionref={baseYellow[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow home">
-                <Position positionref={baseYellow[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle yellow" id="yellow">
-                <Position positionref={board[20]}/>
-            </div>
+            <Position {...{id:20, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BOARD_TYPE}}   />
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[19]}/>
-            </div>
+        <Position {...{id:19, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+            
         </div>
         <div className="placeOnBoard">
-            <div className="circle white">
-                <Position positionref={board[18]}/>
-            </div>
+        <Position {...{id:18, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
+          
         </div>
         <div className="placeOnBoard">
         </div>
           <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
         <div className="placeOnBoard">
-            <div className="circle green home">
-                <Position positionref={baseGreen[2]}/>
-            </div>
+        <Position {...{id:2, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
+         
         </div>
         <div className="placeOnBoard">
-            <div className="circle green home">
-                <Position positionref={baseGreen[3]}/>
-            </div>
+        <Position {...{id:3, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
+        
         </div>
     </div>
 </div>
