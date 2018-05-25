@@ -1,7 +1,6 @@
 @import './../abstracts/variables.pcss';
 $pawnSize:55px;
 $pawnBorder:6px;
-$blue: blue;
 
 .pawn {
     width: 0;
@@ -15,7 +14,7 @@ $blue: blue;
         border-style: solid;
         border-color: transparent;
         position: absolute;
-     top: -24px;
+        top: -24px;
         left: 0;
     }
     &:before {
@@ -28,22 +27,22 @@ $blue: blue;
          border-width: 0 17px+$pawnBorder 55px+$pawnBorder;
         border-bottom-color: black;
     }
-    &.blue {
+    &--blue {
         &:before {
             border-bottom-color: $blue;
         }
     }
-    &.red {
+    &--red {
         &:before {
             border-bottom-color: $red;
         }
     }
-    &.yellow {
+    &--yellow {
         &:before {
             border-bottom-color: $yellow;
         }
     }
-    &.green {
+    &--green {
         &:before {
             border-bottom-color: $green;
         }
