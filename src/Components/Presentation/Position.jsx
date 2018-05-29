@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 const Position=(props)=>{
-    return  (<div className={`position position--${props.color} position--${props.type}`}></div>)
+
+    return  (<div className="placeOnBoard">
+                <div className={`placeOnBoard__position placeOnBoard__position--${props.color}`}></div>
+             </div>)
 }
 
 Position.propTypes={
