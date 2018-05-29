@@ -5,7 +5,8 @@
   "dependencies": {
     "postcss-functions": "^3.0.0",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -55,6 +56,8 @@
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.2",
     "react-error-overlay": "^4.0.0",
+    "redux": "^4.0.0",
+    "redux-immutable-state-invariant": "^2.1.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",

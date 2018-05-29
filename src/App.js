@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import Board from './Components/Presentation/Board';
-
+import { Provider } from 'react-redux'
+import  configureStore from './store/configureStore';
+import BoardContainer from './Components/Container/Board.container';
+import initialStateMock from './mocks/mockInitialState';
+const store = configureStore(initialStateMock)
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Board/>
-      </div>
+      <Provider store={store}>
+          <div className="App">
+            <BoardContainer/>
+          </div>
+      </Provider>
     );
   }
 }
