@@ -10,6 +10,11 @@ class BoardContainer extends Component{
 
 function mapStateToProps(state) {
     return {
+        gameBoard:state.gameBoard,
+        baseBlue :state.baseBlue,
+        baseGreen :state.baseGreen,
+        baseYellow :state.baseYellow,
+        baseRed :state.baseRed
     }
 }
 
