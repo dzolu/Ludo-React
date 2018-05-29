@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Position from './Position'
 import * as ColorTypes from "./../../Types/ColorTypes"
 import * as PositionTypes from "./../../Types/PositionTypes"
+import Placeholder from './Placeholder';
 class Board extends Component{ 
     render(){ 
         const board=[56]; 
@@ -23,10 +24,9 @@ class Board extends Component{
         <div className="placeOnBoard">
             <Position {...{id:1, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
         </div>
-        <div className="placeOnBoard">
-                <div className="circle circle--placeholder"></div>
-        </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+        <Placeholder/>
+ 
         <div className="placeOnBoard">
         <Position {...{id:38, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
           
@@ -38,8 +38,8 @@ class Board extends Component{
         <div className="placeOnBoard">
         <Position {...{id:0, color: ColorTypes.COLOR_RED, type:PositionTypes.BOARD_TYPE}}   />
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/> 
+        <Placeholder/>
         <div className="placeOnBoard">
             <Position {...{id:0, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />    
         </div>
@@ -47,8 +47,7 @@ class Board extends Component{
         <Position {...{id:1, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />
         </div>
     </div>
-    {/*
-    <!-- 2 -->*/}
+    {/*    <!-- 2 -->*/}
     <div className="row">
         <div className="placeOnBoard">
         <Position {...{id:2, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
@@ -58,8 +57,8 @@ class Board extends Component{
         <Position {...{id:3, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}}   />
         
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/> 
+        <Placeholder/>
         <div className="placeOnBoard">
             <Position {...{id:37, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
         </div>
@@ -70,8 +69,8 @@ class Board extends Component{
         <Position {...{id:1, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
         
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/> 
+        <Placeholder/>
         <div className="placeOnBoard">
                  <Position {...{id:3, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}}   />
 
@@ -83,10 +82,10 @@ class Board extends Component{
     {/*
     <!-- 3 -->*/}
     <div className="row">
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+    <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:36, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
             
@@ -98,18 +97,18 @@ class Board extends Component{
         <Position {...{id:2, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
          
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
     </div>
     {/*
     <!-- 4 -->*/}
     <div className="row">
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+    <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:35, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
           
@@ -121,10 +120,10 @@ class Board extends Component{
         <Position {...{id:3, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
         
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
     </div>
     {/*
     <!-- 5 -->*/}
@@ -193,8 +192,8 @@ class Board extends Component{
         <div className="placeOnBoard">
         <Position {...{id:3, color: ColorTypes.COLOR_BLUE, type:PositionTypes.HOME_TYPE}}   />
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-        <div className="placeOnBoard">
+        <Placeholder/>
+           <div className="placeOnBoard">
         <Position {...{id:3, color: ColorTypes.COLOR_GREEN, type:PositionTypes.HOME_TYPE}}   />
         
         </div>
@@ -262,10 +261,10 @@ class Board extends Component{
     {/*
     <!-- 8 -->*/}
     <div className="row">
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+    <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:23, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
            
@@ -278,18 +277,18 @@ class Board extends Component{
         <Position {...{id:15, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
          
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
     </div>
     {/*
     <!-- 9 -->*/}
     <div className="row">
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+    <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:22, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
          
@@ -302,10 +301,10 @@ class Board extends Component{
         <Position {...{id:16, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
            
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+     <Placeholder/> 
+     <Placeholder/> 
+     <Placeholder/>
     </div>
     {/*
     <!-- 10 -->*/}
@@ -316,8 +315,9 @@ class Board extends Component{
         <div className="placeOnBoard">
         <Position {...{id:1, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+     
+     <Placeholder/> 
+     <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:21, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
          
@@ -330,9 +330,8 @@ class Board extends Component{
         <Position {...{id:17, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
            
         </div>
-        <div className="placeOnBoard">
-        </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>    
+        <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:0, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
         </div>
@@ -349,8 +348,8 @@ class Board extends Component{
         <div className="placeOnBoard">
         <Position {...{id:3, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BASE_TYPE}}   />
         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+        <Placeholder/>
         <div className="placeOnBoard">
             <Position {...{id:20, color: ColorTypes.COLOR_YELLOW, type:PositionTypes.BOARD_TYPE}}   />
         </div>
@@ -362,9 +361,8 @@ class Board extends Component{
         <Position {...{id:18, color: ColorTypes.COLOR_WHITE, type:PositionTypes.BOARD_TYPE}}   />
           
         </div>
-        <div className="placeOnBoard">
-        </div>
-          <div className="placeOnBoard">                 <div className="circle circle--placeholder"></div>         </div>
+        <Placeholder/>
+        <Placeholder/>
         <div className="placeOnBoard">
         <Position {...{id:2, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}}   />
          
