@@ -10,9 +10,18 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-          <div className="App">
-            <BoardContainer/>
+          <div className="container">
+          <div className="row">
+          <div className="col-sm-10">
+          <BoardContainer/>
+            </div> 
+            <div className="col-sm-2">
             <DiceContainer/>
+            </div> 
+            </div> 
+            
+           
+          
           </div>
       </Provider>
     );
