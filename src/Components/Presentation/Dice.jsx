@@ -8,8 +8,12 @@ const Dice=(props)=>{
         5: "five",
         6: "six"
     }
+    const throwDice=()=>{
+        const result=Math.floor(Math.random() * (6)) + 1;
+        props.actions.throwDice(result);
+    }
     return(
-        <div className={`dice dice--${adapter[props.result]}`}>
+        <div className={`dice dice--${adapter[props.result]}`} onClick={throwDice}>
             <div className="dice__dot"></div>
             <div className="dice__dot"></div>
             <div className="dice__dot"></div>
