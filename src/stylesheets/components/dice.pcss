@@ -1,0 +1,131 @@
+$top:8.66665px;
+$dotDemension:20px;
+.dice {
+    margin: 336px 0 0 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: relative;
+    &--one {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    &__dot {
+        background-color: black;
+        border-radius: 50%;
+        width: $dotDemension;
+        height: $dotDemension;
+        position: absolute;
+        ^&--one & {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        ^&--two & {
+            $twoPos: 15px;
+            &:nth-child(1) {
+                top: $twoPos;
+                left: $twoPos;
+            }
+            &:nth-child(2) {
+                right: $twoPos;
+                bottom: $twoPos;
+            }
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        ^&--three & {
+            $twoPos: 15px;
+            &:nth-child(1) {
+                top: $top;
+                left: 10px;
+            }
+            &:nth-child(2) {
+                left: 40px;
+                top: $top*2+$dotDemension;
+            }
+            &:nth-child(3) {
+                right: 10px;
+                top: $top*3+$dotDemension*2;
+            }
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        ^&--four &,
+        ^&--five & {
+            $twoPos: 15px;
+            &:nth-child(1),
+            &:nth-child(3) {
+                top: 10px
+            }
+            &:nth-child(2),
+            &:nth-child(4) {
+                bottom: 10px;
+            }
+            &:nth-child(1),
+            &:nth-child(2) {
+                left: 10px;
+            }
+            &:nth-child(3),
+            &:nth-child(4) {
+                right: 10px;
+            }
+            &:nth-child(5),
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        ^&--five & {
+            &:nth-child(5) {
+                display: block;
+                top: 50%;
+                margin-top: -($dotDemension/2);
+                left: 50%;
+                margin-left: -($dotDemension/2);
+            }
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        ^&--six &{
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                left: 15px;
+            }
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                right: 15px;
+            }
+            &:nth-child(1),
+            &:nth-child(4) {
+                top: $top;
+            }
+            &:nth-child(2),
+            &:nth-child(5) {
+                top: $top*2+$dotDemension;
+            }
+            &:nth-child(3),
+            &:nth-child(6) {
+                top: $top*3+$dotDemension*2;
+            }
+        }
+    }
+}

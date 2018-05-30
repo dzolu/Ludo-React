@@ -1,11 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import {connect} from "react-redux";
 import Board from '../Presentation/Board';
-class BoardContainer extends Component{
-    render(){
-        return( <Board/>)
-    }
-     
+const BoardContainer =(props)=>{
+    return( <Board {...props}/>)
 }
 
 function mapStateToProps(state) {
@@ -14,7 +11,11 @@ function mapStateToProps(state) {
         baseBlue :state.baseBlue,
         baseGreen :state.baseGreen,
         baseYellow :state.baseYellow,
-        baseRed :state.baseRed
+        baseRed :state.baseRed,
+        homeBlue :state.homeBlue,
+        homeGreen :state.homeGreen,
+        homeYellow :state.homeYellow,
+        homeRed :state.homeRed
     }
 }
 
