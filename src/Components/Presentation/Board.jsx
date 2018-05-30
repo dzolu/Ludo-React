@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Position from './Position'; 
 import * as ColorTypes from "./../../Types/ColorTypes";
 import * as PositionTypes from "./../../Types/PositionTypes"; 
 import Placeholder from './Placeholder'; 
-class Board extends Component{ 
-    render(){ return (
+const Board =(props)=>{ 
+    return (
 <div className="board">
     <div className="row">
         <Position {...{id:0, color: ColorTypes.COLOR_BLUE, type:PositionTypes.BASE_TYPE}} />
@@ -167,7 +167,10 @@ class Board extends Component{
         <Placeholder/>
         <Placeholder/>
         <Position {...{id:2, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}} />
-        <Position {...{id:3, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE}} />
+        <Position {...{id:3, color: ColorTypes.COLOR_GREEN, type:PositionTypes.BASE_TYPE, posRef: props.baseGreen[3]}} />
     </div>
 </div>
-) } } export default Board;
+)
+}   
+
+export default Board;

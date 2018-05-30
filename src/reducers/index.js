@@ -1,15 +1,15 @@
 import {combineReducers} from 'redux';
-import gameboard from './gameboardReducer';
-import baseblue from './baseblueReducer';
-import basegreen from './basegreenReducer';
-import baseyellow from './baseyellowReducer';
-import basered from './baseredReducer';
+import gameBoard from './gameBoardReducer';
+import baseBlue from './baseBlueReducer';
+import baseGreen from './baseGreenReducer';
+import baseYellow from './baseYellowReducer';
+import baseRed from './baseRedReducer';
 const rootReducer= combineReducers({
-    gameboard,
-    baseblue,
-    basegreen,
-    baseyellow,
-    basered
+    gameBoard,
+    baseBlue,
+    baseGreen,
+    baseYellow,
+    baseRed
 });
 
 export default rootReducer;

@@ -1,3 +1,3 @@
-export default function basered(state=[], action) {
+export default function baseRed(state=[], action) {
     return state;
 }

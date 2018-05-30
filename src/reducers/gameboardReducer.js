@@ -1,3 +1,3 @@
-export default function gameboard(state=[], action) {
+export default function gameBoard(state=[], action) {
     return state;
 }
