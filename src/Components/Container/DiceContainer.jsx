@@ -7,7 +7,7 @@ const DiceContainer =(props)=>{
 
 function mapStateToProps(state) {
     return {
-      //  result: state.result
+        result: state.diceResult
     }
 }
 
