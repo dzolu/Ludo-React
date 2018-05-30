@@ -32,6 +32,7 @@ class Board extends Component{
         <Placeholder/>
         <Placeholder/>
         <Position {...{id:3, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}} />
+        <Position {...{id:4, color: ColorTypes.COLOR_RED, type:PositionTypes.BASE_TYPE}} />
     </div>
     {/*
     <!-- 3 -->*/}
