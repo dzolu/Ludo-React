@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Pawn from './Pawn';
 
 const Position=(props)=>{
-const hasPawn=()=>{
-  return props.posRef && <Pawn {...props.posRef.color}/>  
-}
+    const hasPawn=()=>{
+        return props.posRef && <Pawn {...props.posRef}/>  
+    }   
     return  (
             <div className="placeOnBoard">
                 <div className={`placeOnBoard__position placeOnBoard__position--${props.color}`}>

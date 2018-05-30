@@ -11,7 +11,11 @@ function mapStateToProps(state) {
         baseBlue :state.baseBlue,
         baseGreen :state.baseGreen,
         baseYellow :state.baseYellow,
-        baseRed :state.baseRed
+        baseRed :state.baseRed,
+        homeBlue :state.homeBlue,
+        homeGreen :state.homeGreen,
+        homeYellow :state.homeYellow,
+        homeRed :state.homeRed
     }
 }
 

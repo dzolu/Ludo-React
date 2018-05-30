@@ -19,10 +19,10 @@ export const twoPlayers={
     baseGreen :[{id:1, color:COLOR_GREEN},{id:2, color:COLOR_GREEN},{id:3, color:COLOR_GREEN},{id:4, color:COLOR_GREEN}],
     baseYellow :new Array(4),
     baseRed :new Array(4),
-    // homeYellow : [],
-    // homeRed : [],
-    // homeGreen : [],
-    // homeBlue : []
+    homeYellow :new Array(4),
+    homeRed : new Array(4),
+    homeGreen : new Array(4),
+    homeBlue : new Array(4)
 }
 export const threePlayers={
     gameboard: new Array(54),
@@ -45,4 +45,16 @@ export const fourPlayers={
     homeRed : [],
     homeGreen : [],
     homeBlue : []
+}
+
+export const allInHome={
+    gameboard: new Array(54),
+    baseBlue : [],
+    baseGreen :[],
+    baseYellow :[],
+    baseRed :[],
+    homeYellow : [{id:1, color:COLOR_YELLOW},{id:2, color:COLOR_YELLOW},{id:3, color:COLOR_YELLOW},{id:4, color:COLOR_YELLOW}],
+    homeRed : [{id:1, color:COLOR_RED},{id:2, color:COLOR_RED},{id:3, color:COLOR_RED},{id:4, color:COLOR_RED}],
+    homeGreen : [{id:1, color:COLOR_GREEN},{id:2, color:COLOR_GREEN},{id:3, color:COLOR_GREEN},{id:4, color:COLOR_GREEN}],
+    homeBlue : [{id:1, color:COLOR_BLUE}, {id:2, color:COLOR_BLUE}, {id:3, color:COLOR_BLUE}, {id:4, color:COLOR_BLUE}]
 }

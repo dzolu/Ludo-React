@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import  configureStore from './store/configureStore';
 import BoardContainer from './Components/Container/Board.container';
 import * as initialStateMock from './mocks/mockInitialState';
-const store = configureStore(initialStateMock.twoPlayers)
+const store = configureStore(initialStateMock.fourPlayers)
 class App extends Component {
   render() {
     return (
