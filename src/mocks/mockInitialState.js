@@ -2,7 +2,7 @@ import { COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW } from '../Types/Color
 
 
 export const onePlayers={
-    gameboard: new Array(54),
+    gameBoard: new Array(54),
     baseBlue : [{id:1, color:COLOR_BLUE}, {id:2, color:COLOR_BLUE}, {id:3, color:COLOR_BLUE}, {id:4, color:COLOR_BLUE}],
     baseGreen : [],
     baseYellow : [],
@@ -25,7 +25,7 @@ export const twoPlayers={
     homeBlue : new Array(4)
 }
 export const threePlayers={
-    gameboard: new Array(54),
+    gameBoard: new Array(54),
     baseBlue : [{id:1, color:COLOR_BLUE}, {id:2, color:COLOR_BLUE}, {id:3, color:COLOR_BLUE}, {id:4, color:COLOR_BLUE}],
     baseGreen :[{id:1, color:COLOR_GREEN},{id:2, color:COLOR_GREEN},{id:3, color:COLOR_GREEN},{id:4, color:COLOR_GREEN}],
     baseYellow :[{id:1, color:COLOR_YELLOW},{id:2, color:COLOR_YELLOW},{id:3, color:COLOR_YELLOW},{id:4, color:COLOR_YELLOW}],
@@ -36,7 +36,7 @@ export const threePlayers={
     homeBlue : []
 }
 export const fourPlayers={
-    gameboard: new Array(54),
+    gameBoard: new Array(54),
     baseBlue : [{id:1, color:COLOR_BLUE}, {id:2, color:COLOR_BLUE}, {id:3, color:COLOR_BLUE}, {id:4, color:COLOR_BLUE}],
     baseGreen :[{id:1, color:COLOR_GREEN},{id:2, color:COLOR_GREEN},{id:3, color:COLOR_GREEN},{id:4, color:COLOR_GREEN}],
     baseYellow :[{id:1, color:COLOR_YELLOW},{id:2, color:COLOR_YELLOW},{id:3, color:COLOR_YELLOW},{id:4, color:COLOR_YELLOW}],
@@ -48,7 +48,7 @@ export const fourPlayers={
 }
 
 export const allInHome={
-    gameboard: new Array(54),
+    gameBoard: new Array(54),
     baseBlue : [],
     baseGreen :[],
     baseYellow :[],
