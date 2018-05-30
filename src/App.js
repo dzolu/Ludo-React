@@ -3,8 +3,8 @@ import './App.css';
 import { Provider } from 'react-redux'
 import  configureStore from './store/configureStore';
 import BoardContainer from './Components/Container/Board.container';
-import initialStateMock from './mocks/mockInitialState';
-const store = configureStore(initialStateMock)
+import * as initialStateMock from './mocks/mockInitialState';
+const store = configureStore(initialStateMock.twoPlayers)
 class App extends Component {
   render() {
     return (
