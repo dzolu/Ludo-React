@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Pawn from './Pawn';
 import PawnContainer from "../Container/PawnContainer";
 
 const Position=(props)=>{

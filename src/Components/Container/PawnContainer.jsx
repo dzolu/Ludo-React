@@ -3,9 +3,13 @@ import {connect} from "react-redux";
 import * as pawnActions from "./../../actions/pawnActions";
 import {bindActionCreators} from "redux";
 import Pawn from '../Presentation/Pawn';
+import Application from '../../Core/Application';
 
 const PawnContainer =(props)=>{
-    return( <Pawn {...props}/>)
+    const move=()=>{
+        Application.moveRequest(props);
+    }
+    return( <Pawn {...props} move={move}/>)
 }
 
 function mapStateToProps(state, ownProps) {
