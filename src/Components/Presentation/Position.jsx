@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import Pawn from './Pawn';
+import PawnContainer from "../Container/PawnContainer";
 
 const Position=(props)=>{
     const hasPawn=()=>{
-        return props.posRef && <Pawn {...props.posRef}/>  
+        return props.posRef && <PawnContainer {...props.posRef} positionIndex={props.id}/>  
     }   
     return  (
             <div className="placeOnBoard">
