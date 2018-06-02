@@ -20,5 +20,5 @@ const Dice=(props)=>{
         </div>
 
     )
-}
+};
 export default Dice;

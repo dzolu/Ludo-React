@@ -1,3 +1,3 @@
-export default function  homeBlue(state=[], action) {
+export default function homeBlue(state = [], action) {
     return state;
 }

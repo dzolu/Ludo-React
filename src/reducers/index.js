@@ -11,7 +11,7 @@ import homeRed from './homeRedReducer';
 import diceResult from './diceResultReducer';
 import player from "./playerReducer";
 
-const rootReducer= combineReducers({
+const rootReducer = combineReducers({
     gameBoard,
     baseBlue,
     baseGreen,

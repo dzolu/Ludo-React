@@ -5,6 +5,6 @@ const Placeholder=(props)=>{
             <div className="placeOnBoard__position placeOnBoard__position--placeholder"></div>         
       </div>
     )
-}
+};
 
 export default Placeholder;

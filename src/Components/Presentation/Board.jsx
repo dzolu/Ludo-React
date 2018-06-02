@@ -171,6 +171,6 @@ const Board =(props)=>{
     </div>
 </div>
 )
-}   
+};
 
 export default Board;

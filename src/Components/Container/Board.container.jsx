@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Board from '../Presentation/Board';
 const BoardContainer =(props)=>{
     return( <Board {...props}/>)
-}
+};
 
 function mapStateToProps(state) {
     return {

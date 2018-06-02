@@ -6,7 +6,7 @@ import Pawn from '../Presentation/Pawn';
 
 const PawnContainer = (props) => {
     const move = () => {
-        if(props.actionName && props.actionName!==""){
+        if (props.actionName && props.actionName !== "") {
             props.actions.dispatchAction(props.actionName, props)
         }
 

@@ -1,3 +1,3 @@
-export default function baseGreen(state=[], action) {
+export default function baseGreen(state = [], action) {
     return state;
 }

@@ -1,8 +1,7 @@
-import { AppSettings } from './../AppSettings';
 import rules from "./Rules/Rules";
 
 class Application {
-    static moveRequest(props){
+    static moveRequest(props) {
         // this.analize(props);
         /*Gosciu naciska piona i sprawdzasz czy gosciu ma akcje czy tez message dlaczego nie moze sie ruszyc
         jak ackaj wykonujesz i czyscisz akcje
@@ -15,10 +14,11 @@ class Application {
         jezeli umiescisz w own state dla piona couter to bedziesz wiedzial dokladnie czy moze juz wejsc do domu
         
         */
-    } 
-    static analize(props){
-        const {pawns}=props.player;
-          Object.keys(pawns).map(key=> rules.check(key, props)) ;
+    }
+
+    static analize(props) {
+        const {pawns} = props.player;
+        Object.keys(pawns).map(key => rules.check(key, props));
     }
 
     /* function where I will analize sytuation of player
