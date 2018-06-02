@@ -1,3 +1,3 @@
-export const AppSettings={
-        redHomeIndex: 0
+export const AppSettings = {
+    redHomeIndex: 0
 }
