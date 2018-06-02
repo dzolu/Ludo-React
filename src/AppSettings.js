@@ -1,0 +1,1 @@
+export const RED_HOME_INDEX=0;

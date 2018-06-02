@@ -1,4 +1,4 @@
-module.exports =  function (ctx) {
+module.exports = function (ctx) {
     const automath = require('postcss-automath');
     const postcssImport = require("postcss-import");
     const autoprefixer = require("autoprefixer");
@@ -14,26 +14,26 @@ module.exports =  function (ctx) {
     return {
         plugins: [
             postcssImport({
-                 addDependencyTo: ctx.webpack 
-              }),
-              mixins,
-              calc,
-              cssfor,
-              simpleVars,
-              automath,
-              colorFunction,
-              nestedAncestors,
-              nested,
-              map,
-              assets,
-              autoprefixer({
+                addDependencyTo: ctx.webpack
+            }),
+            mixins,
+            calc,
+            cssfor,
+            simpleVars,
+            automath,
+            colorFunction,
+            nestedAncestors,
+            nested,
+            map,
+            assets,
+            autoprefixer({
                 browsers: [
-                  '>1%',
-                  'last 4 versions',
-                  'Firefox ESR',
-                  'not ie < 9', // React doesn't support IE8 anyway
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
                 ]
-              })
+            })
         ]
     }
 };
