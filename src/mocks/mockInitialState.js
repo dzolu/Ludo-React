@@ -1,4 +1,4 @@
-import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from '../Types/ColorTypes';
+import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from '../types/ColorTypes';
 
 
 const Board = {};

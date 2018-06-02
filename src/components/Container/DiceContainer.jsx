@@ -1,11 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import Dice from '../Presentation/Dice';
-import * as diceActions from "./../../actions/diceActions";
+import * as diceActions from "../../redux/actions/diceActions";
 import {bindActionCreators} from "redux";
-import Application from './../../Core/Application'
-import * as pawnActions from "../../actions/pawnActions";
-import * as playerActions from "../../actions/playerAction";
+import Application from '../../core/Application'
+import * as pawnActions from "../../redux/actions/pawnActions";
+import * as playerActions from "../../redux/actions/playerAction";
 
 const DiceContainer = (props) => {
     const throwDice = () => {

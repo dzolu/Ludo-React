@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import * as pawnActions from "./../../actions/pawnActions";
+import * as pawnActions from "../../redux/actions/pawnActions";
 import {bindActionCreators} from "redux";
 import Pawn from '../Presentation/Pawn';
 

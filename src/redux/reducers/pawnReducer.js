@@ -1,4 +1,4 @@
-import * as Types from "./../actions/playerTypes";
+import * as Types from "../actions/actionTypes";
 
 export default function pawnReducer(state, action) {
     switch (action.type) {

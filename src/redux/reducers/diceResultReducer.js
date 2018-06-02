@@ -1,4 +1,4 @@
-import * as Types from './../actions/actionTypes';
+import * as Types from '../actions/actionTypes';
 
 export default function diceResult(state = 6, action) {
     switch (action.type) {

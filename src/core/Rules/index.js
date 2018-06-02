@@ -1,5 +1,5 @@
 import * as AppSettings from "./../../AppSettings";
-import * as Types from "../../actions/actionTypes";
+import * as Types from "../../redux/actions/actionTypes";
 
 function createActionName(color, name) {
     return `${color.toUpperCase()}_${name}`;

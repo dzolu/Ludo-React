@@ -1,5 +1,5 @@
-import * as Types from "./../actions/moveTypes";
-import * as AppSettings from "../AppSettings";
+import * as Types from "../actions/actionTypes";
+import * as AppSettings from "../../AppSettings";
 
 export default function gameBoard(state = {}, action) {
     switch (action.type) {

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Provider} from 'react-redux'
-import configureStore from './store/configureStore';
-import BoardContainer from './Components/Container/Board.container';
+import configureStore from './redux/store/configureStore';
+import BoardContainer from './components/Container/Board.container';
 import * as initialStateMock from './mocks/mockInitialState';
-import DiceContainer from './Components/Container/DiceContainer';
+import DiceContainer from './components/Container/DiceContainer';
 
 const store = configureStore(initialStateMock.fourPlayers);
 

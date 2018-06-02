@@ -1,7 +1,7 @@
 import React from "react";
 import Position from './../Presentation/Position'; 
-import * as ColorTypes from "./../../Types/ColorTypes";
-import * as PositionTypes from "./../../Types/PositionTypes"; 
+import * as ColorTypes from "../../types/ColorTypes";
+import * as PositionTypes from "../../types/PositionTypes";
 import Placeholder from './Placeholder'; 
 const Board =(props)=>{ 
     return (
