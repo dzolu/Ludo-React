@@ -1,3 +1,1 @@
-export const AppSettings = {
-    redHomeIndex: 0
-};
+export const RED_HOME_INDEX=0;
