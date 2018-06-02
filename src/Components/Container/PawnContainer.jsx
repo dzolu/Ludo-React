@@ -6,7 +6,10 @@ import Pawn from '../Presentation/Pawn';
 
 const PawnContainer = (props) => {
     const move = () => {
-        props.actions.dispatchAction(props.actionName, props)
+        if(props.actionName && props.actionName!==""){
+            props.actions.dispatchAction(props.actionName, props)
+        }
+
     };
     return (<Pawn {...props} move={move}/>)
 };
@@ -20,12 +23,6 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-/*
-        id:  ownProps.id,
-        positionIndex: ownProps.positionIndex,
-        color: ownProps.color,
-        actionName: state.player.pawns[ownProps.id].actionName
- */
 function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators(pawnActions, dispatch)
