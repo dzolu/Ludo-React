@@ -5,8 +5,13 @@ import * as diceActions from "./../../actions/diceActions";
 import {bindActionCreators} from "redux";
 
 const DiceContainer =(props)=>{
-    return( <Dice {...props}/>)
-}
+    const throwDice=()=>{
+        const result=Math.floor(Math.random() * (6)) + 1;
+        props.actions.throwDice(result);
+    };
+    return( <Dice {...props} throwDice={throwDice}/>)
+};
+
 
 function mapStateToProps(state) {
     return {

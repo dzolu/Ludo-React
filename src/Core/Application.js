@@ -3,7 +3,7 @@ import rules from "./Rules/Rules";
 
 class Application {
     static moveRequest(props){
-        this.analize(props);
+        // this.analize(props);
         /*Gosciu naciska piona i sprawdzasz czy gosciu ma akcje czy tez message dlaczego nie moze sie ruszyc
         jak ackaj wykonujesz i czyscisz akcje
 
