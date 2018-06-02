@@ -1,0 +1,1 @@
+export const OWN_PAWN_IN_DESTINATION = "You cannot move this pawn because in destination is already one of your pawns";

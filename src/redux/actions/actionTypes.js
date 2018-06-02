@@ -1,3 +1,8 @@
+export var BEAT_PAWN = "BEAT_PAWN";
+export var UNABLE_TO_MOVE = "UNABLE_TO_MOVE";
+export var MOVE_FORWARD_WITH_BEAT = "MOVE_FORWARD_WITH_BEAT";
+export var ADD_ACTION = "ADD_ACTION";
+export var MOVE_FORWARD = "MOVE_FORWARD";
 export const THROW_DICE = "THROW_DICE";
 export const LEAVE_BASE = "LEAVE_BASE";
 export const RED_LEAVE_BASE = "RED_LEAVE_BASE";
