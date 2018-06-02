@@ -5,7 +5,7 @@ import * as diceActions from "../../redux/actions/diceActions";
 import {bindActionCreators} from "redux";
 import Application from '../../core/Application'
 import * as pawnActions from "../../redux/actions/pawnActions";
-import * as playerActions from "../../redux/actions/playerAction";
+
 
 const DiceContainer = (props) => {
     const throwDice = () => {
@@ -38,8 +38,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators(diceActions, dispatch),
-        pawnActions: bindActionCreators(pawnActions, dispatch),
-        playerActions: bindActionCreators(playerActions, dispatch)
+        pawnActions: bindActionCreators(pawnActions, dispatch)
     }
 }
 
