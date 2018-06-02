@@ -18,6 +18,7 @@ function mapStateToProps(state, ownProps) {
     return {
         id: ownProps.id,
         positionIndex: ownProps.positionIndex,
+        positionType: ownProps.positionType,
         color: ownProps.color,
         actionName: state.player.pawns[ownProps.id].actionName
     }

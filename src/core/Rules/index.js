@@ -1,27 +1,28 @@
 import * as AppSettings from "./../../AppSettings";
 import * as Types from "../../redux/actions/actionTypes";
 import * as Messages from "./../../types/MessagesTypes";
+import {TYPE_BASE, TYPE_BOARD, TYPE_HOME} from "../../types/PositionTypes";
 
 function createActionName(color, name) {
     return `${color.toUpperCase()}_${name}`;
 }
 
-function isOnBoard() {
-
+function isOnBoard(pawn) {
+    return pawn.positionType===TYPE_BOARD;
 }
 
-function isInHome() {
-
+function isInHome(pawn) {
+    return pawn.positionType===TYPE_HOME;
 }
 
-function isInBase() {
-
+function isInBase(pawn) {
+    return pawn.positionType===TYPE_BASE;
 }
 
 function leaveBase(key, props) {
     const {result, gameBoard, player} = props;
-    const {pawn} = player.pawns[key];
-    if (!isInBase()) {
+    const pawn = player.pawns[key];
+    if (!isInBase(pawn)) {
         return;
     }
     if ((result === 1 || result === 6) && !gameBoard[AppSettings.RED_HOME_INDEX]) {
@@ -32,9 +33,9 @@ function leaveBase(key, props) {
 
 function moveForward(key, props) {
     const {result, gameBoard, player} = props;
-    const {pawn} = player.pawns[key];
-    const destination = gameBoard[pawn.position.index + result];
-    if (isOnBoard()) {
+    const pawn = player.pawns[key];
+    const destination = gameBoard[pawn.positionIndex + result];
+    if (isOnBoard(pawn)) {
         if (!destination) {
             const actionName = createActionName(pawn.color, Types.MOVE_FORWARD);
             props.pawnActions.addAction({id: key, actionName});

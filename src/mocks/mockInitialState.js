@@ -1,5 +1,5 @@
 import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from '../types/ColorTypes';
-
+import {TYPE_BASE} from "../types/PositionTypes"
 
 const Board = {};
 const bluePawns = {
@@ -10,10 +10,10 @@ const bluePawns = {
 };
 
 const redPawns = {
-    0: {id: 0, color: COLOR_RED, actionName: ""},
-    1: {id: 1, color: COLOR_RED, actionName: ""},
-    2: {id: 2, color: COLOR_RED, actionName: ""},
-    3: {id: 3, color: COLOR_RED, actionName: ""}
+    0: {id: 0, color: COLOR_RED, actionName: "", positionIndex: 0, positionType: TYPE_BASE},
+    1: {id: 1, color: COLOR_RED, actionName: "", positionIndex: 1, positionType: TYPE_BASE},
+    2: {id: 2, color: COLOR_RED, actionName: "", positionIndex: 2, positionType: TYPE_BASE},
+    3: {id: 3, color: COLOR_RED, actionName: "", positionIndex: 3, positionType: TYPE_BASE}
 };
 const yellowPawns = {
     0: {id: 0, color: COLOR_YELLOW},
