@@ -5,7 +5,7 @@ function createActionName(color, name) {
     return `${color.toUpperCase()}_${name}`;
 }
 
-function leaveHome(key, props) {
+function leaveBase(key, props) {
     const {result, gameBoard, player} = props;
     if ((result === 1 || result === 6) && !gameBoard[AppSettings.RED_HOME_INDEX]) {
         const actionName = createActionName(player.pawns[key].color, Types.LEAVE_BASE);
@@ -13,7 +13,14 @@ function leaveHome(key, props) {
     }
 }
 
+function move() {
 
-const rootRules = [leaveHome];
+}
+function move() {
+
+}
+
+
+const rootRules = [leaveBase];
 
 export default rootRules;
