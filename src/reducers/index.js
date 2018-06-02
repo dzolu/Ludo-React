@@ -9,6 +9,8 @@ import homeBlue from './homeBlueReducer';
 import homeGreen from './homeGreenReducer';
 import homeRed from './homeRedReducer';
 import diceResult from './diceResultReducer';
+import player from "./playerReducer";
+
 const rootReducer= combineReducers({
     gameBoard,
     baseBlue,
@@ -19,7 +21,8 @@ const rootReducer= combineReducers({
     homeBlue,
     homeGreen,
     homeRed,
-    diceResult
+    diceResult,
+    player
 });
 
 export default rootReducer;

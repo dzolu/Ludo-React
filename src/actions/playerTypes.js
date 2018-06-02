@@ -1,0 +1,3 @@
+export const CHANGE_PLAYER= "CHANGE_PLAYER";
+export const LEAVE_BASE= "LEAVE_BASE";
+export const ADD_LEAVE_BASE_ACTION= "ADD_LEAVE_BASE_ACTION";

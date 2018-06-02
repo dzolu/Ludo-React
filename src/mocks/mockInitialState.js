@@ -1,6 +1,7 @@
 import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from '../Types/ColorTypes';
 
-const Board={};
+
+const Board = {};
 const bluePawns = {
     0: {id: 0, color: COLOR_BLUE},
     1: {id: 1, color: COLOR_BLUE},
@@ -9,10 +10,10 @@ const bluePawns = {
 };
 
 const redPawns = {
-    0: {id: 0, color: COLOR_RED},
-    1: {id: 1, color: COLOR_RED},
-    2: {id: 2, color: COLOR_RED},
-    3: {id: 3, color: COLOR_RED}
+    0: {id: 0, color: COLOR_RED, actionName: ""},
+    1: {id: 1, color: COLOR_RED, actionName: ""},
+    2: {id: 2, color: COLOR_RED, actionName: ""},
+    3: {id: 3, color: COLOR_RED, actionName: ""}
 };
 const yellowPawns = {
     0: {id: 0, color: COLOR_YELLOW},
@@ -71,7 +72,7 @@ export const fourPlayers = {
     homeRed: {},
     homeGreen: {},
     homeBlue: {},
-    player: {pawns: []}
+    player: {pawns: redPawns}
 };
 
 export const allInHome = {

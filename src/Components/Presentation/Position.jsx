@@ -5,7 +5,7 @@ import PawnContainer from "../Container/PawnContainer";
 const Position=(props)=>{
     const hasPawn=()=>{
         return props.posRef && <PawnContainer {...props.posRef} positionIndex={props.id}/>  
-    }   
+    };
     return  (
             <div className="placeOnBoard">
                 <div className={`placeOnBoard__position placeOnBoard__position--${props.color}`}>
@@ -13,12 +13,12 @@ const Position=(props)=>{
                 </div>
              </div>
              )
-}
+};
 
 Position.propTypes={
     pawn: PropTypes.object,
     color:PropTypes.string.isRequired,
     type:PropTypes.string.isRequired,
     id:  PropTypes.number.isRequired
-}
+};
 export default Position;

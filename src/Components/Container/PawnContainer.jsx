@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import * as pawnActions from "./../../actions/pawnActions";
+import * as playerActions from "./../../actions/playerAction";
 import {bindActionCreators} from "redux";
 import Pawn from '../Presentation/Pawn';
 import Application from '../../Core/Application';
@@ -8,9 +9,9 @@ import Application from '../../Core/Application';
 const PawnContainer =(props)=>{
     const move=()=>{
         Application.moveRequest(props);
-    }
+    };
     return( <Pawn {...props} move={move}/>)
-}
+};
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -25,12 +26,15 @@ function mapStateToProps(state, ownProps) {
         homeRed :state.homeRed.actions,
         color: ownProps.color,
         id:  ownProps.id,
-        positionIndex: ownProps.positionIndex 
+        positionIndex: ownProps.positionIndex,
+        player: state.player,
+        result: state.diceResult
     }
 }
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(pawnActions, dispatch)
+        pawnActions: bindActionCreators(pawnActions, dispatch),
+        playerActions: bindActionCreators(playerActions, dispatch),
     }
 }
 
