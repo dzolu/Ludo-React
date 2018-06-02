@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import Dice from '../Presentation/Dice';
 import * as diceActions from "./../../actions/diceActions";
@@ -7,28 +7,17 @@ import Application from './../../Core/Application'
 import * as pawnActions from "../../actions/pawnActions";
 import * as playerActions from "../../actions/playerAction";
 
-class DiceContainer extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    throwDice = () => {
+const DiceContainer = (props) => {
+    const throwDice = () => {
         const result = Math.floor(Math.random() * (6)) + 1;
-        this.props.actions.throwDice(result);
-
+        props.actions.throwDice(result);
+        Application.analize({...props, result: result});
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.result != this.props.result) {
-            Application.analize(nextProps);
-        }
 
-    }
+    return (<Dice {...props} throwDice={throwDice}/>)
 
-    render() {
-        return (<Dice {...this.props} throwDice={this.throwDice}/>)
-    }
-}
+};
 
 function mapStateToProps(state) {
     return {
