@@ -37,17 +37,18 @@ function moveForward(key, props) {
     const destination = gameBoard[pawn.positionIndex + result];
     if (isOnBoard(pawn)) {
         if (!destination) {
-            const actionName = createActionName(pawn.color, Types.MOVE_FORWARD);
-            props.pawnActions.addAction({id: key, actionName});
+            const actionName = Types.MOVE_FORWARD;
+            props.pawnActions.addAction({pawn, actionName});
             return;
         }
-        if (destination.color !== pawn.color) {
-            const actionName = createActionName(pawn.color, Types.MOVE_FORWARD_WITH_BEAT);
-            props.pawnActions.addAction({id: key, actionName});
-            //tu chcesz dodac akcje na pionku w destynac
-            destination.actions.addAction({id: destination.id, actionName: Types.BEAT_PAWN});
-            return;
-        }
+        // if (destination.color !== pawn.color) {
+        //     const actionName = createActionName(pawn.color, Types.MOVE_FORWARD_WITH_BEAT);
+        //     props.pawnActions.addAction({pawn, actionName});
+        //     //tu chcesz dodac akcje na pionku w destynac
+        //     const pawnToBeat=destination;
+        //     destination.actions.addAction({id: destination.id, actionName: Types.BEAT_PAWN});
+        //     return;
+        // }
 
         props.pawnActions.addAction({
             id: key,

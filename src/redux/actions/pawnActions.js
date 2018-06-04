@@ -10,3 +10,7 @@ export function addAction(arg) {
 export function nextPlayer(pawns) {
     return {type: Types.NEXT_PLAYER, pawns: {...pawns}}
 }
+
+export function clearAfterMove(pawn) {
+    return {type: Types.CLEAN_AFTER_MOVE_FORWARD, pawn}
+}
