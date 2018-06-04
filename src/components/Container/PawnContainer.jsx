@@ -5,12 +5,21 @@ import {bindActionCreators} from "redux";
 import Pawn from '../Presentation/Pawn';
 
 const PawnContainer = (props) => {
+    const nextPlayer=()=>{
+       return Object.keys(props.pawns).map(key=>{
+         return {...props.pawns[key], actionName:""};
+      });
+   
+      }
     const move = () => {
         if (props.actionName && props.actionName !== "") {
-            props.actions.dispatchAction(props.actionName, props)
+            props.actions.dispatchAction(props.actionName, props);
+            props.actions.nextPlayer(nextPlayer());
+          
         }
 
     };
+   
     return (<Pawn {...props} move={move}/>)
 };
 
@@ -20,7 +29,8 @@ function mapStateToProps(state, ownProps) {
         positionIndex: ownProps.positionIndex,
         positionType: ownProps.positionType,
         color: ownProps.color,
-        actionName: state.player.pawns[ownProps.id].actionName
+        actionName: state.player.pawns[ownProps.id].actionName, 
+        pawns:state.player.pawns
     }
 }
 

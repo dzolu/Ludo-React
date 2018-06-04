@@ -9,6 +9,6 @@ export const RED_LEAVE_BASE = "RED_LEAVE_BASE";
 export const BLUE_LEAVE_BASE = "BLUE_LEAVE_BASE";
 export const YELLOW_LEAVE_BASE = "YELLOW_LEAVE_BASE";
 export const GREEN_LEAVE_BASE = "GREEN_LEAVE_BASE";
-
+export const NEXT_PLAYER="NEXT_PLAYER";
 //Player
 export const ADD_LEAVE_BASE_ACTION = "ADD_LEAVE_BASE_ACTION";
