@@ -27,7 +27,7 @@ function leaveBase(key, props) {
     }
     if ((result === 1 || result === 6) && !gameBoard[AppSettings.RED_HOME_INDEX]) {
         const actionName = createActionName(pawn.color, Types.LEAVE_BASE);
-        props.pawnActions.addAction({id: key, actionName});
+        props.pawnActions.addAction({pawn, actionName});
     }
 }
 
