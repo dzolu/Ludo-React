@@ -7,15 +7,16 @@ import Pawn from '../Presentation/Pawn';
 const PawnContainer = (props) => {
     const nextPlayer=()=>{
        return Object.keys(props.pawns).map(key=>{
-         return {...props.pawns[key], actionName:""};
+           const pawn=props.pawns[key];
+           return pawn.id===props.id ? {...pawn, positionType: props.positionType , positionIndex: props.positionIndex} : {...pawn, actionName:""};
       });
    
       }
     const move = () => {
         if (props.actionName && props.actionName !== "") {
+            props.actions.nextPlayer(nextPlayer());  
             props.actions.dispatchAction(props.actionName, props);
-            props.actions.nextPlayer(nextPlayer());
-          
+                 
         }
 
     };
