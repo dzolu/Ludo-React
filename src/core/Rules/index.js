@@ -3,7 +3,7 @@ import * as Types from "../../redux/actions/actionTypes";
 import * as Messages from "./../../types/MessagesTypes";
 import {TYPE_BASE, TYPE_BOARD, TYPE_HOME} from "../../types/PositionTypes";
 
-function createActionName(color, name) {
+function createActionType(color, name) {
     return `${color.toUpperCase()}_${name}`;
 }
 
@@ -26,8 +26,8 @@ function leaveBase(key, props) {
         return;
     }
     if ((result === 1 || result === 6) && !gameBoard[AppSettings.RED_HOME_INDEX]) {
-        const actionName = createActionName(pawn.color, Types.LEAVE_BASE);
-        props.pawnActions.addAction({pawn, actionName});
+        const type = createActionType(pawn.color, Types.LEAVE_BASE);
+        props.pawnActions.addAction({type, pawn});
     }
 }
 
@@ -41,17 +41,18 @@ function moveForward(key, props) {
             props.pawnActions.addAction({pawn, actionName});
             return;
         }
-        // if (destination.color !== pawn.color) {
-        //     const actionName = createActionName(pawn.color, Types.MOVE_FORWARD_WITH_BEAT);
-        //     props.pawnActions.addAction({pawn, actionName});
-        //     //tu chcesz dodac akcje na pionku w destynac
-        //     const pawnToBeat=destination;
-        //     destination.actions.addAction({id: destination.id, actionName: Types.BEAT_PAWN});
-        //     return;
-        // }
+        if (destination.color !== pawn.color) {
+            const actionName = createActionType(pawn.color, Types.MOVE_FORWARD_WITH_BEAT);
+            props.pawnActions.addAction({pawn, actionName});
+            //tu chcesz dodac akcje na pionku w destynac
+             //tu chcesz dodac akcje na pionku w destynac
+            props.pawnActions.addAction({pawn, actionName});
+            destination.actions.addAction({pawn: destination, actionName: Types.BEAT_PAWN});
+            return;
+        }
 
         props.pawnActions.addAction({
-            id: key,
+            pawn:pawn,
             actionName: Types.UNABLE_TO_MOVE,
             reason: Messages.OWN_PAWN_IN_DESTINATION
         });

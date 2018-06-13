@@ -1,7 +1,8 @@
 import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from '../types/ColorTypes';
-import {TYPE_BASE} from "../types/PositionTypes"
+import {TYPE_BASE, TYPE_BOARD} from "../types/PositionTypes"
 
-const Board = {};
+const temp={id: 1, color: COLOR_YELLOW,  actionName: "", positionIndex: 0, positionType: TYPE_BOARD, actions:{addAction:(obj)=>{this.actionName="yellow_BEAT_PAWN"}}}
+const Board = {1:temp, 2:temp, 3:temp,4:temp, 5:temp, 6:temp, 7:temp};
 const bluePawns = {
     0: {id: 0, color: COLOR_BLUE},
     1: {id: 1, color: COLOR_BLUE},
@@ -10,10 +11,10 @@ const bluePawns = {
 };
 
 const redPawns = {
-    0: {id: 0, color: COLOR_RED, actionName: "", positionIndex: 0, positionType: TYPE_BASE},
-    1: {id: 1, color: COLOR_RED, actionName: "", positionIndex: 1, positionType: TYPE_BASE},
-    2: {id: 2, color: COLOR_RED, actionName: "", positionIndex: 2, positionType: TYPE_BASE},
-    3: {id: 3, color: COLOR_RED, actionName: "", positionIndex: 3, positionType: TYPE_BASE}
+    0: {id: 0, color: COLOR_RED, actions: [], positionIndex: 0, positionType: TYPE_BASE},
+    1: {id: 1, color: COLOR_RED, actions: [], positionIndex: 1, positionType: TYPE_BASE},
+    2: {id: 2, color: COLOR_RED, actions: [], positionIndex: 2, positionType: TYPE_BASE},
+    3: {id: 3, color: COLOR_RED, actions: [], positionIndex: 3, positionType: TYPE_BASE}
 };
 const yellowPawns = {
     0: {id: 0, color: COLOR_YELLOW},
