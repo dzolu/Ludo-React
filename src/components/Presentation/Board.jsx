@@ -82,7 +82,7 @@ const Board =(props)=>{
     {/*
     <!-- 6 -->*/}
     <div className="row">
-        <Position {...{id:39, color: ColorTypes.COLOR_WHITE, type:PositionTypes.TYPE_BOARD, posRef: props.gameBoard[39]}} />
+        <Position {...{id:29, color: ColorTypes.COLOR_WHITE, type:PositionTypes.TYPE_BOARD, posRef: props.gameBoard[29]}} />
         <Position {...{id:0, color: ColorTypes.COLOR_BLUE, type:PositionTypes.TYPE_HOME ,  posRef: props.homeBlue[0]}} />
         <Position {...{id:1, color: ColorTypes.COLOR_BLUE, type:PositionTypes.TYPE_HOME,  posRef: props.homeBlue[1]}} />
         <Position {...{id:2, color: ColorTypes.COLOR_BLUE, type:PositionTypes.TYPE_HOME,  posRef: props.homeBlue[2]}} />
