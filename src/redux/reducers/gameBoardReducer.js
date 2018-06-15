@@ -9,6 +9,7 @@ export default function gameBoard(state = {}, action) {
         case Types.MOVE_FORWARD:
             return {...state, [action.pawn.positionIndex+action.pawn.result]: pawnReducer(action.pawn, action)};
         case Types.CLEAN_AFTER_MOVE_FORWARD:
+        case Types.YELLOW_BACK_TO_BASE:
             return {...state, [action.pawn.positionIndex]: null};
         default:
             return state;
