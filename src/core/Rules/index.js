@@ -61,7 +61,7 @@ function moveForward(key, props) {
         gameBoard,
         player
     } = props;
-    const nextPositionIndex = player.pawns[key].positionIndex + result;
+    const nextPositionIndex = (player.pawns[key].positionIndex + result)% AppSettings.TOTAL_POSITION_ON_BOARD;
     const pawn = Object.assign({}, player.pawns[key], {nextPositionIndex});
     const pawnInDestination = gameBoard[nextPositionIndex];
     if (isOnBoard(pawn)) {
