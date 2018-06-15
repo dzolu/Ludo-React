@@ -6,6 +6,8 @@ export default function pawnReducer(state, action) {
     switch (action.type) {
         case Types.ADD_ACTION:
             return {...state, actions: actionsReducer(state.actions, action)};
+        case Types.MOVE_FORWARD:
+            return {...state, positionIndex: action.pawn.nextPositionIndex};
         case Types.RED_LEAVE_BASE:
             return {...state,  positionIndex: AppSettings.RED_HOME_INDEX, positionType: TYPE_BOARD};
         case Types.YELLOW_BACK_TO_BASE:

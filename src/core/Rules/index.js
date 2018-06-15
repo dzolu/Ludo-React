@@ -61,8 +61,9 @@ function moveForward(key, props) {
         gameBoard,
         player
     } = props;
-    const pawn = player.pawns[key];
-    const pawnInDestination = gameBoard[pawn.positionIndex + result];
+    const nextPositionIndex = player.pawns[key].positionIndex + result;
+    const pawn = Object.assign({}, player.pawns[key], {nextPositionIndex});
+    const pawnInDestination = gameBoard[nextPositionIndex];
     if (isOnBoard(pawn)) {
         if (!pawnInDestination) {
             props.pawnActions.addAction({
@@ -70,12 +71,17 @@ function moveForward(key, props) {
                 types: [{
                     type: Types.MOVE_FORWARD,
                     pawn
+                }, 
+                {
+                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                    pawn
                 }]
             });
             return;
         }
         if (pawnInDestination.color !== pawn.color) {
             const type = createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
+
             props.pawnActions.addAction({
                 pawn,
                 types: [{
@@ -83,6 +89,10 @@ function moveForward(key, props) {
                     pawn: pawnInDestination
                 }, {
                     type: Types.MOVE_FORWARD,
+                    pawn
+                }, 
+                {
+                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
                     pawn
                 }]
             });

@@ -9,6 +9,8 @@ export default function pawnsReducer(state, action) {
             return {...state, [action.pawn.id]: pawnReducer(action.pawn, action)};
         case Types.NEXT_PLAYER:
             return {...state, [action.pawn.id]: pawnReducer(action.pawn, action)};
+        case Types.MOVE_FORWARD:
+            return {...state, [action.pawn.id]: pawnReducer(action.pawn, action)};    
         default:
             return state;
     }

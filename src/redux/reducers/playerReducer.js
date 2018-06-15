@@ -8,6 +8,8 @@ export default function playerReducer(state = {}, action) {
             return {...state, pawns: pawnsReducer(state.pawns, action)};
         case Types.NEXT_PLAYER:
             return {...state, pawns: pawnsReducer(state.pawns, action)};
+        case Types.MOVE_FORWARD:
+            return {...state, pawns: pawnsReducer(state.pawns, action)};
         default:
             return state;
     }
