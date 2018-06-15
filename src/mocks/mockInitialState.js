@@ -17,14 +17,14 @@ const bluePawns = {
 };
 
 const redPawns = {
-    0: {id: 0, color: COLOR_RED, actions: [], positionIndex: 0, positionType: TYPE_BASE},
-    1: {id: 1, color: COLOR_RED, actions: [], positionIndex: 1, positionType: TYPE_BASE},
-    2: {id: 2, color: COLOR_RED, actions: [], positionIndex: 2, positionType: TYPE_BASE},
-    3: {id: 3, color: COLOR_RED, actions: [], positionIndex: 3, positionType: TYPE_BASE}
+    0: {id: 0, color: COLOR_RED, actions: [], positionIndex: 0, positionType: TYPE_BASE, counter:0},
+    1: {id: 1, color: COLOR_RED, actions: [], positionIndex: 1, positionType: TYPE_BASE, counter:0},
+    2: {id: 2, color: COLOR_RED, actions: [], positionIndex: 2, positionType: TYPE_BASE, counter:0},
+    3: {id: 3, color: COLOR_RED, actions: [], positionIndex: 3, positionType: TYPE_BASE, counter:0}
 };
 const yellowPawns = {
     0: {id: 0, color: COLOR_YELLOW},
-   // 1: {id: 1, color: COLOR_YELLOW},
+    1: {id: 1, color: COLOR_YELLOW},
     2: {id: 2, color: COLOR_YELLOW},
     3: {id: 3, color: COLOR_YELLOW}
 };
