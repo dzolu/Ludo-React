@@ -11,6 +11,10 @@ function createActionType(color, name) {
     return `${color.toUpperCase()}_${name}`;
 }
 
+function getNextPosition(props, key) {
+    return (props.player.pawns[key].positionIndex + props.result) % AppSettings.TOTAL_POSITION_ON_BOARD;
+}
+
 function isOnBoard(pawn) {
     return pawn.positionType === TYPE_BOARD;
 }
@@ -22,6 +26,7 @@ function isInHome(pawn) {
 function isInBase(pawn) {
     return pawn.positionType === TYPE_BASE;
 }
+
 
 function unableToMove(props, pawn, reason) {
     const newPawn = Object.assign({}, ...pawn, reason)
@@ -61,21 +66,24 @@ function moveForward(key, props) {
         gameBoard,
         player
     } = props;
-    const nextPositionIndex = (player.pawns[key].positionIndex + result)% AppSettings.TOTAL_POSITION_ON_BOARD;
-    const pawn = Object.assign({}, player.pawns[key], {nextPositionIndex});
+    const nextPositionIndex = getNextPosition(props, key);
+    const pawn = Object.assign({}, player.pawns[key], {
+        nextPositionIndex
+    });
     const pawnInDestination = gameBoard[nextPositionIndex];
     if (isOnBoard(pawn)) {
         if (!pawnInDestination) {
             props.pawnActions.addAction({
                 pawn,
                 types: [{
-                    type: Types.MOVE_FORWARD,
-                    pawn
-                }, 
-                {
-                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                    pawn
-                }]
+                        type: Types.MOVE_FORWARD,
+                        pawn
+                    },
+                    {
+                        type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                        pawn
+                    }
+                ]
             });
             return;
         }
@@ -85,16 +93,17 @@ function moveForward(key, props) {
             props.pawnActions.addAction({
                 pawn,
                 types: [{
-                    type,
-                    pawn: pawnInDestination
-                }, {
-                    type: Types.MOVE_FORWARD,
-                    pawn
-                }, 
-                {
-                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                    pawn
-                }]
+                        type,
+                        pawn: pawnInDestination
+                    }, {
+                        type: Types.MOVE_FORWARD,
+                        pawn
+                    },
+                    {
+                        type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                        pawn
+                    }
+                ]
             });
             return;
         }
@@ -102,9 +111,29 @@ function moveForward(key, props) {
     }
 }
 
+function ableToMoveHome(pawn, gameBoard) {
+    return pawn.counter > 39 && pawn.counter < 44 && !gameBoard[pawn.nextPositionIndex]
+}
 
-function moveToHome() {
-
+function moveToHome(key, props) {
+    const pawn = Object.assign({}, props.player.pawns[key]);
+    pawn.nextPositionIndex = pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD;
+    if (ableToMoveHome(pawn)) {
+        const type = createActionType(pawn.color, Types.MOVE_TO_HOME);
+        props.pawnActions.addAction({
+            pawn,
+            types: [{
+                    type,
+                    pawn
+                },
+                {
+                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                    pawn
+                }
+            ]
+        });
+        return;
+    }
 }
 
 
