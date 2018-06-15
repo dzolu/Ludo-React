@@ -19,6 +19,14 @@ function isInBase(pawn) {
     return pawn.positionType===TYPE_BASE;
 }
 
+function unableToMove(props,pawn, reason){
+    const newPawn= Object.assign({}, ...pawn, reason)
+    props.pawnActions.addAction({
+        types:[{type:Types.UNABLE_TO_MOVE}],
+        pawn:newPawn
+    });
+}
+
 function leaveBase(key, props) {
     const {result, gameBoard, player} = props;
     const pawn = player.pawns[key];
@@ -27,37 +35,28 @@ function leaveBase(key, props) {
     }
     if ((result === 1 || result === 6) && !gameBoard[AppSettings.RED_HOME_INDEX]) {
         const type = createActionType(pawn.color, Types.LEAVE_BASE);
-        props.pawnActions.addAction({type, pawn});
+        props.pawnActions.addAction({pawn, types:[{type, pawn}]});
     }
 }
 
 function moveForward(key, props) {
     const {result, gameBoard, player} = props;
     const pawn = player.pawns[key];
-    const destination = gameBoard[pawn.positionIndex + result];
+    const pawnInDestination = gameBoard[pawn.positionIndex + result];
     if (isOnBoard(pawn)) {
-        if (!destination) {
-            const actionName = Types.MOVE_FORWARD;
-            props.pawnActions.addAction({pawn, actionName});
+        if (!pawnInDestination) {
+            props.pawnActions.addAction({pawn, types:[{type:Types.MOVE_FORWARD, pawn}]});
             return;
         }
-        if (destination.color !== pawn.color) {
-            const actionName = createActionType(pawn.color, Types.MOVE_FORWARD_WITH_BEAT);
-            props.pawnActions.addAction({pawn, actionName});
-            //tu chcesz dodac akcje na pionku w destynac
-             //tu chcesz dodac akcje na pionku w destynac
-            props.pawnActions.addAction({pawn, actionName});
-            destination.actions.addAction({pawn: destination, actionName: Types.BEAT_PAWN});
+        if (pawnInDestination.color !== pawn.color) {
+            const type = createActionType(pawnInDestination.color, Types.BACK_TO_HOME);
+            props.pawnActions.addAction({pawn, types:[{type:Types.MOVE_FORWARD, pawn}, {type, pawnInDestination}]});
             return;
         }
-
-        props.pawnActions.addAction({
-            pawn:pawn,
-            actionName: Types.UNABLE_TO_MOVE,
-            reason: Messages.OWN_PAWN_IN_DESTINATION
-        });
+        unableToMove(props,pawn, Messages.OWN_PAWN_IN_DESTINATION);
     }
 }
+
 
 function moveToHome() {
 

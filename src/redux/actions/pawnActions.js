@@ -3,12 +3,12 @@ import * as Types from "./actionTypes";
 export function dispatchAction(type, pawn) {
     return {type, pawn}
 }
-export function addAction(arg) {
-    return {type: Types.ADD_ACTION, arg}
+export function addAction(types) {
+    return {type: Types.ADD_ACTION, ...types}
 }
 
-export function nextPlayer(pawns) {
-    return {type: Types.NEXT_PLAYER, pawns: {...pawns}}
+export function nextPlayer(pawn) {
+    return {type: Types.NEXT_PLAYER, pawn}
 }
 
 export function clearAfterMove(pawn) {

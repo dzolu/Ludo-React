@@ -7,7 +7,7 @@ export default function playerReducer(state = {}, action) {
         case Types.RED_LEAVE_BASE:
             return {...state, pawns: pawnsReducer(state.pawns, action)};
         case Types.NEXT_PLAYER:
-            return {...state, pawns: action.pawns};
+            return {...state, pawns: pawnsReducer(state.pawns, action)};
         default:
             return state;
     }
