@@ -66,12 +66,11 @@ function moveForward(key, props) {
         gameBoard,
         player
     } = props;
-    const nextPositionIndex = getNextPosition(props, key);
-    const pawn = Object.assign({}, player.pawns[key], {
-        nextPositionIndex
-    });
-    const pawnInDestination = gameBoard[nextPositionIndex];
-    if (isOnBoard(pawn)) {
+    const pawn = Object.assign({}, player.pawns[key]);
+    pawn.nextPositionIndex=getNextPosition(props, key);
+    pawn.counter+=result; 
+    const pawnInDestination = gameBoard[pawn.nextPositionIndex];
+    if (isOnBoard(pawn) && pawn.counter <= AppSettings.TOTAL_POSITION_ON_BOARD) {
         if (!pawnInDestination) {
             props.pawnActions.addAction({
                 pawn,
@@ -111,14 +110,14 @@ function moveForward(key, props) {
     }
 }
 
-function ableToMoveHome(pawn, gameBoard) {
-    return pawn.counter > 39 && pawn.counter < 44 && !gameBoard[pawn.nextPositionIndex]
+function ableToMoveHome(pawn, home) {
+    return pawn.counter > 39 && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
 }
 
 function moveToHome(key, props) {
     const pawn = Object.assign({}, props.player.pawns[key]);
-    pawn.nextPositionIndex = pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD;
-    if (ableToMoveHome(pawn)) {
+    pawn.counter+=props.result;
+    if (ableToMoveHome(pawn, props["homeRed"])) {
         const type = createActionType(pawn.color, Types.MOVE_TO_HOME);
         props.pawnActions.addAction({
             pawn,
