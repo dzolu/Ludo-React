@@ -1,7 +1,7 @@
 import  rules from "./index"
 class Rules{
-    static check(key,props){
-        rules.forEach(rule=>{rule(key, props)})
+    static check(props){
+        rules.forEach(rule=>{rule(props)})
     }
 }
 

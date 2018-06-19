@@ -22,6 +22,13 @@ const redPawns = {
     2: {id: 2, color: COLOR_RED, actions: [], positionIndex: 2, positionType: TYPE_BASE, counter:0},
     3: {id: 3, color: COLOR_RED, actions: [], positionIndex: 3, positionType: TYPE_BASE, counter:0}
 };
+
+const redPawns2 = [
+     {id: 0, color: COLOR_RED, actions: [], positionIndex: 0, positionType: TYPE_BASE, counter:0},
+     {id: 1, color: COLOR_RED, actions: [], positionIndex: 1, positionType: TYPE_BASE, counter:0},
+     {id: 2, color: COLOR_RED, actions: [], positionIndex: 2, positionType: TYPE_BASE, counter:0},
+     {id: 3, color: COLOR_RED, actions: [], positionIndex: 3, positionType: TYPE_BASE, counter:0}
+];
 const yellowPawns = {
     0: {id: 0, color: COLOR_YELLOW},
     1: {id: 1, color: COLOR_YELLOW},
@@ -79,7 +86,7 @@ export const fourPlayers = {
     homeRed: {},
     homeGreen: {},
     homeBlue: {},
-    player: {pawns: redPawns}
+    player: {pawns: redPawns2}
 };
 
 export const allInHome = {

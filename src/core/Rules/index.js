@@ -11,10 +11,6 @@ function createActionType(color, name) {
     return `${color.toUpperCase()}_${name}`;
 }
 
-function getNextPosition(props, key) {
-    return (props.player.pawns[key].positionIndex + props.result) % AppSettings.TOTAL_POSITION_ON_BOARD;
-}
-
 function isOnBoard(pawn) {
     return pawn.positionType === TYPE_BOARD;
 }
@@ -28,9 +24,14 @@ function isInBase(pawn) {
 }
 
 
-function unableToMove(props, pawn, reason) {
+function unableToMove(props) {
+    const {
+        pawn,
+        actions,
+        reason
+    } = props;
     const newPawn = Object.assign({}, ...pawn, reason)
-    props.pawnActions.addAction({
+    actions.addAction({
         types: [{
             type: Types.UNABLE_TO_MOVE
         }],
@@ -38,13 +39,12 @@ function unableToMove(props, pawn, reason) {
     });
 }
 
-function leaveBase(key, props) {
+function leaveBase(props) {
     const {
+        pawn,
         result,
-        gameBoard,
-        player
+        gameBoard
     } = props;
-    const pawn = player.pawns[key];
     if (!isInBase(pawn)) {
         return;
     }
@@ -60,70 +60,25 @@ function leaveBase(key, props) {
     }
 }
 
-function moveForward(key, props) {
+function ableToMoveForward(pawn) {
+    return !isOnBoard(pawn) && pawn.counter > AppSettings.TOTAL_POSITION_ON_BOARD;
+}
+
+function moveForward(props) {
     const {
-        result,
-        gameBoard,
-        player
+        pawn,
+        gameBoard
     } = props;
-    const pawn = Object.assign({}, player.pawns[key]);
-    pawn.nextPositionIndex=getNextPosition(props, key);
-    pawn.counter+=result; 
-    const pawnInDestination = gameBoard[pawn.nextPositionIndex];
-    if (isOnBoard(pawn) && pawn.counter <= AppSettings.TOTAL_POSITION_ON_BOARD) {
-        if (!pawnInDestination) {
-            props.pawnActions.addAction({
-                pawn,
-                types: [{
-                        type: Types.MOVE_FORWARD,
-                        pawn
-                    },
-                    {
-                        type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                        pawn
-                    }
-                ]
-            });
-            return;
-        }
-        if (pawnInDestination.color !== pawn.color) {
-            const type = createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
-
-            props.pawnActions.addAction({
-                pawn,
-                types: [{
-                        type,
-                        pawn: pawnInDestination
-                    }, {
-                        type: Types.MOVE_FORWARD,
-                        pawn
-                    },
-                    {
-                        type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                        pawn
-                    }
-                ]
-            });
-            return;
-        }
-        unableToMove(props, pawn, Messages.OWN_PAWN_IN_DESTINATION);
+    if (!ableToMoveForward(pawn)) {
+        return;
     }
-}
+    const pawnInDestination = gameBoard[pawn.nextPositionIndex];
 
-function ableToMoveHome(pawn, home) {
-    return pawn.counter > 39 && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
-}
-
-function moveToHome(key, props) {
-    const pawn = Object.assign({}, props.player.pawns[key]);
-    pawn.counter+=props.result;
-    if(isInHome(pawn)) return;
-    if (ableToMoveHome(pawn, props["homeRed"])) {
-        const type = createActionType(pawn.color, Types.MOVE_TO_HOME);
+    if (!pawnInDestination) {
         props.pawnActions.addAction({
             pawn,
             types: [{
-                    type,
+                    type: Types.MOVE_FORWARD,
                     pawn
                 },
                 {
@@ -134,6 +89,58 @@ function moveToHome(key, props) {
         });
         return;
     }
+    if (pawnInDestination.color !== pawn.color) {
+        const type = createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
+
+        props.pawnActions.addAction({
+            pawn,
+            types: [{
+                    type,
+                    pawn: pawnInDestination
+                }, {
+                    type: Types.MOVE_FORWARD,
+                    pawn
+                },
+                {
+                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                    pawn
+                }
+            ]
+        });
+        return;
+    }
+    unableToMove({
+        actions: props.actions,
+        pawn,
+        reason: Messages.OWN_PAWN_IN_DESTINATION
+    });
+
+}
+
+function ableToMoveHome(pawn, home) {
+    return !isInHome(pawn) && pawn.counter > 39 && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
+}
+
+function moveToHome(props) {
+    const {
+        pawn
+    } = props;
+    if (!ableToMoveHome(pawn, props["homeRed"])) {
+        return;
+    }
+    const type = createActionType(pawn.color, Types.MOVE_TO_HOME);
+    props.pawnActions.addAction({
+        pawn,
+        types: [{
+                type,
+                pawn
+            },
+            {
+                type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                pawn
+            }
+        ]
+    });
 }
 
 
