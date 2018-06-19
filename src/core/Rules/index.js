@@ -61,7 +61,7 @@ function leaveBase(props) {
 }
 
 function ableToMoveForward(pawn) {
-    return !isOnBoard(pawn) && pawn.counter > AppSettings.TOTAL_POSITION_ON_BOARD;
+    return isOnBoard(pawn) && pawn.counter <= AppSettings.TOTAL_POSITION_ON_BOARD;
 }
 
 function moveForward(props) {
@@ -118,7 +118,7 @@ function moveForward(props) {
 }
 
 function ableToMoveHome(pawn, home) {
-    return !isInHome(pawn) && pawn.counter > 39 && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
+    return !isInHome(pawn) && pawn.counter > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
 }
 
 function moveToHome(props) {
