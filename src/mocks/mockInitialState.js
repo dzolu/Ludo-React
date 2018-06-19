@@ -78,20 +78,19 @@ const bluePawns = {
         color: COLOR_BLUE
     }
 };
-const bluePawns2 = [
-     {
+const bluePawns2 = [{
         id: 0,
         color: COLOR_BLUE
     },
-     {
+    {
         id: 1,
         color: COLOR_BLUE
     },
-     {
+    {
         id: 2,
         color: COLOR_BLUE
     },
-     {
+    {
         id: 3,
         color: COLOR_BLUE
     }
@@ -187,15 +186,15 @@ const yellowPawns2 = [{
         id: 0,
         color: COLOR_YELLOW
     },
-     {
+    {
         id: 1,
         color: COLOR_YELLOW
     },
-     {
+    {
         id: 2,
         color: COLOR_YELLOW
     },
-     {
+    {
         id: 3,
         color: COLOR_YELLOW
     }
@@ -219,12 +218,11 @@ const greenPawns = {
     }
 };
 
-const greenPawns2 = [
-    {
+const greenPawns2 = [{
         id: 0,
         color: COLOR_GREEN
     },
-     {
+    {
         id: 1,
         color: COLOR_GREEN
     },
@@ -232,7 +230,7 @@ const greenPawns2 = [
         id: 2,
         color: COLOR_GREEN
     },
-   {
+    {
         id: 3,
         color: COLOR_GREEN
     }
@@ -274,29 +272,25 @@ export const threePlayers = {
 };
 export const fourPlayers = {
     queue: [{
-        player: {
-            id: 0,
-            name: "Tom",
-            pawns: redPawns2
-        }
+        id: 0,
+        name: "Tom",
+        pawns: redPawns2
+
     }, {
-        player: {
-            id: 1,
-            name: "Bob",
-            pawns: bluePawns2
-        }
+        id: 1,
+        name: "Bob",
+        pawns: bluePawns2
+
     }, {
-        player: {
-            id: 2,
-            name: "Jim",
-            pawns: yellowPawns2
-        }
+        id: 2,
+        name: "Jim",
+        pawns: yellowPawns2
+
     }, {
-        player: {
-            id: 3,
-            name: "Tim",
-            pawns: greenPawns2
-        }
+        id: 3,
+        name: "Tim",
+        pawns: greenPawns2
+
     }, ],
     gameBoard: Board,
     baseBlue: bluePawns,
