@@ -117,6 +117,7 @@ function ableToMoveHome(pawn, home) {
 function moveToHome(key, props) {
     const pawn = Object.assign({}, props.player.pawns[key]);
     pawn.counter+=props.result;
+    if(isInHome(pawn)) return;
     if (ableToMoveHome(pawn, props["homeRed"])) {
         const type = createActionType(pawn.color, Types.MOVE_TO_HOME);
         props.pawnActions.addAction({
