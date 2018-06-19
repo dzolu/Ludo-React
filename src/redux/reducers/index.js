@@ -10,7 +10,7 @@ import homeGreen from './homeGreenReducer';
 import homeRed from './homeRedReducer';
 import diceResult from './diceResultReducer';
 import player from "./playerReducer";
-
+import queue from "./queueReducer";
 const rootReducer = combineReducers({
     gameBoard,
     baseBlue,
@@ -22,7 +22,8 @@ const rootReducer = combineReducers({
     homeGreen,
     homeRed,
     diceResult,
-    player
+    player,
+    queue
 });
 
 export default rootReducer;
