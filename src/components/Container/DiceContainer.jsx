@@ -31,7 +31,8 @@ function mapStateToProps(state) {
         homeYellow: state.homeYellow,
         homeRed: state.homeRed.actions,
         player: state.player,
-        result: state.diceResult
+        result: state.diceResult,
+        queue : state.queue
     }
 }
 
