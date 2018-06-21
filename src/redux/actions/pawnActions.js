@@ -7,8 +7,8 @@ export function addAction(types) {
     return {type: Types.ADD_ACTION, ...types}
 }
 
-export function nextPlayer(pawn) {
-    return {type: Types.NEXT_PLAYER, pawn}
+export function nextPlayer(queue) {
+    return {type: Types.NEXT_PLAYER, queue}
 }
 
 export function clearAfterMove(pawn) {

@@ -20,7 +20,9 @@ function mapStateToProps(state, ownProps) {
         color: ownProps.color,
         actionsList: state.player.pawns[ownProps.id].actions, 
         pawns:state.player.pawns,
-        result: state.diceResult
+        result: state.diceResult, 
+        queue: state.queue, 
+        pawn:state.player.pawns[ownProps.id]
     }
 }
 

@@ -2,9 +2,9 @@ class Queue {
     static add(props) {
         const {
             queue,
-            record
+            player
         } = props;
-        return [...queue, record]
+        return [...queue, player]
     }
     static remove(array) {
         return array.slice(1)

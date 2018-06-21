@@ -1,3 +1,4 @@
+import Queue from '../Queue';
 class Moves {
     static makeMove(props) {
         if (props.actionsList && props.actionsList.length) {
@@ -9,11 +10,12 @@ class Moves {
     }
     static nextPlayer = (props) => {
         const {
-            pawns
+            queue,
+            actions     
         } = props;
-        return Object.keys(pawns).map(key => {
-            return props.actions.nextPlayer(pawns[key])
-        });
+        const pawn= Object.assign({}, props.pawn, {actions:[]})
+        const queueNew= Queue.add({queue:Queue.remove(queue), pawn}); 
+        actions.nextPlayer(queueNew)
     }
 }
 
