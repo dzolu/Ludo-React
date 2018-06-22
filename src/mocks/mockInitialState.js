@@ -300,10 +300,7 @@ export const fourPlayers = {
     homeYellow: {},
     homeRed: {},
     homeGreen: {},
-    homeBlue: {},
-    player: {
-        pawns: redPawns2
-    }
+    homeBlue: {}
 };
 
 export const allInHome = {

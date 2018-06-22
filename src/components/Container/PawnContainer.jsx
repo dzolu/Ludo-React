@@ -18,11 +18,8 @@ function mapStateToProps(state, ownProps) {
         positionIndex: ownProps.positionIndex,
         positionType: ownProps.positionType,
         color: ownProps.color,
-        actionsList: state.player.pawns[ownProps.id].actions, 
-        pawns:state.player.pawns,
         result: state.diceResult, 
         queue: state.queue, 
-        pawn:state.player.pawns[ownProps.id]
     }
 }
 

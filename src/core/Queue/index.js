@@ -20,6 +20,9 @@ class Queue {
     static size(array) {
         return array.length;
     }
+    static getPawn(props){
+        return {...props.queue[0].pawns[props.id]}
+    }
 }
 
 export default Queue;
