@@ -19,8 +19,9 @@ class Moves {
         } = props;
         const pawn = Queue.getPawn(props);
         let player= Queue.first(queue);
-        player=Object.assign({},player,{pawns:Queue.updatePawnsArray(player.pawns, pawn)});
-        player=Object.assign({},player,{pawns: Queue.clearActions(player.pawns)})
+        //next stage will be move update Pawns array to reducer
+        player={...player, pawns:Queue.updatePawnsArray(player.pawns, pawn)};
+        player={...player, pawns: Queue.clearActions(player.pawns)};
         const queueNew = Queue.add({queue:Queue.remove(queue), player}); 
         actions.nextPlayer(queueNew)
     }

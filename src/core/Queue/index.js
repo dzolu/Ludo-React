@@ -24,7 +24,7 @@ class Queue {
     }
     static clearActions(array){
        return array.map((item)=>{
-                return Object.assign({}, ...item, {actions:[]})
+                return {...item, actions:[]}
         })
     }
     static updatePawnsArray(array, pawn) {
@@ -32,7 +32,7 @@ class Queue {
             if(index !== pawn.id) {
                 return item;
             }
-            return pawn    
+            return {...pawn, positionIndex: pawn.nextPositionIndex, positionType: pawn.nextPositionType, counter: pawn.counterAfterMove }    
         });
     }
 }
