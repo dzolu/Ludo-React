@@ -5,61 +5,11 @@ import {
     COLOR_YELLOW
 } from '../types/ColorTypes';
 import {
-    TYPE_BASE,
-    TYPE_BOARD
+    TYPE_BASE
 } from "../types/PositionTypes"
 
-const temp = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 1,
-    positionType: TYPE_BOARD
-}
-const temp2 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 2,
-    positionType: TYPE_BOARD
-}
-const temp3 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 3,
-    positionType: TYPE_BOARD
-}
-const temp4 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 4,
-    positionType: TYPE_BOARD
-}
-const temp5 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 5,
-    positionType: TYPE_BOARD
-}
-const temp6 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 6,
-    positionType: TYPE_BOARD
-}
-const temp7 = {
-    id: 1,
-    color: COLOR_YELLOW,
-    positionIndex: 7,
-    positionType: TYPE_BOARD
-}
-const Board = {
-    1: temp,
-    2: temp2,
-    3: temp3,
-    4: temp4,
-    5: temp5,
-    6: temp6,
-    7: temp7
-};
+
+const Board = {};
 const bluePawns = {
     0: {
         id: 0,
