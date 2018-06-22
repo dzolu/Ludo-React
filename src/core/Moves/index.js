@@ -1,13 +1,15 @@
 import Queue from '../Queue';
-import actions from '../../redux/reducers/actionsReducer';
 class Moves {
     static makeMove(props) {
         if (props.queue) {
             const pawn= Queue.getPawn(props);
-            pawn.actions.forEach(action => {
-                props.actions.dispatchAction(action.type, action.pawn);
-            });
-            Moves.nextPlayer(props);
+            if(pawn.actions && pawn.actions.length>0){
+                pawn.actions.forEach(action => {
+                    props.actions.dispatchAction(action.type, action.pawn);
+                });
+                Moves.nextPlayer(props);
+            }
+         
         }
     }
     static nextPlayer = (props) => {
