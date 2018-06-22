@@ -26,6 +26,9 @@ export default function gameBoard(state = {}, action) {
             };
         case Types.CLEAN_AFTER_MOVE_FORWARD:
         case Types.YELLOW_BACK_TO_BASE:
+        case Types.GREEN_BACK_TO_BASE:
+        case Types.BLUE_BACK_TO_BASE:
+        case Types.RED_BACK_TO_BASE:
             return { ...state,
                 [action.pawn.positionIndex]: null
             };
