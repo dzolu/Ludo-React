@@ -1,4 +1,4 @@
-export const HOME_TYPE = "home";
-export const BASE_TYPE = "base";
-export const BOARD_TYPE = "gameBoard";
-export const PLACEHOLDER_TYPE = "placeholder";
+export const TYPE_HOME = "home";
+export const TYPE_BASE = "base";
+export const TYPE_BOARD = "gameBoard";
+export const TYPE_PLACEHOLDER = "placeholder";

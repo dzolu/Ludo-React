@@ -3,7 +3,10 @@ import pawnsReducer from "./pawnsReducer";
 
 export default function playerReducer(state = {}, action) {
     switch (action.type) {
-        case Types.ADD_LEAVE_BASE_ACTION:
+        case Types.ADD_ACTION:
+        case Types.RED_LEAVE_BASE:
+        case Types.NEXT_PLAYER:
+        case Types.MOVE_FORWARD:
             return {...state, pawns: pawnsReducer(state.pawns, action)};
         default:
             return state;
