@@ -6,8 +6,17 @@ export default function pawnsReducer(state, action) {
         case Types.ADD_ACTION:
         case Types.RED_LEAVE_BASE:
         case Types.MOVE_FORWARD:
-            return {...state, [action.pawn.id]: pawnReducer(action.pawn, action)}
+            return  updatePawnsArray(state, action); 
         default:
             return state;
     }
+}
+
+function updatePawnsArray(array, action) {
+    return array.map( (item, index) => {
+        if(index !== action.pawn.id) {
+            return item;
+        }
+        return pawnReducer(action.pawn, action)    
+    });
 }

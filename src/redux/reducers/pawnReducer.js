@@ -1,10 +1,9 @@
 import * as Types from "../actions/actionTypes";
-import {TYPE_BASE, TYPE_HOME } from '../../types/PositionTypes';
+import {TYPE_HOME } from '../../types/PositionTypes';
 import actionsReducer from './actionsReducer';
 export default function pawnReducer(state, action) {
     switch (action.type) {
         case Types.ADD_ACTION:
-        case Types.NEXT_PLAYER:
             return {...state, actions: actionsReducer(state.actions, action)};
         case Types.MOVE_FORWARD:
             return {...state, positionIndex: action.pawn.nextPositionIndex};

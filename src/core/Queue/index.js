@@ -10,8 +10,7 @@ class Queue {
         return array.slice(1)
     }
     static first(array) {
-        return { ...array[0]
-        };
+        return { ...array[0]};
     }
     static last(array) {
         return { ...array[array.length - 1]
@@ -22,6 +21,19 @@ class Queue {
     }
     static getPawn(props){
         return {...props.queue[0].pawns[props.id]}
+    }
+    static clearActions(array){
+       return array.map((item)=>{
+                return Object.assign({}, ...item, {actions:[]})
+        })
+    }
+    static updatePawnsArray(array, pawn) {
+        return array.map( (item, index) => {
+            if(index !== pawn.id) {
+                return item;
+            }
+            return pawn    
+        });
     }
 }
 
