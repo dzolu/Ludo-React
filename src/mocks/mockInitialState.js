@@ -187,13 +187,19 @@ const greenPawns2 = [{
 ];
 
 export const onePlayers = {
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: redPawns2
+
+    }, ],
     gameBoard: {},
-    baseBlue: bluePawns,
+    baseBlue: {},
     baseGreen: [],
     baseYellow: [],
     baseRed: [],
     homeYellow: [],
-    homeRed: [],
+    homeRed: redPawns2,
     homeGreen: [],
     homeBlue: {}
 

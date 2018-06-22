@@ -1,6 +1,12 @@
 import Rules from './Rules';
-import * as Types from "../../redux/actions/actionTypes";
-
+import {
+    TYPE_HOME,
+    MOVE_TO_HOME,
+    CLEAN_AFTER_MOVE_FORWARD
+} from '../../types/PositionTypes';
+import {
+    TOTAL_POSITION_ON_BOARD
+} from "./../../AppSettings";
 
 export default function moveToHome(props) {
     const {
@@ -9,16 +15,23 @@ export default function moveToHome(props) {
     if (!Rules.ableToMoveHome(pawn, props["homeRed"])) {
         return;
     }
-    const type = Rules.createActionType(pawn.color, Types.MOVE_TO_HOME);
+    const type = Rules.createActionType(pawn.color, MOVE_TO_HOME);
+    const nextPositionIndex = pawn.counter - TOTAL_POSITION_ON_BOARD - 1;
+    const newPawn = Object.assign({}, { ...pawn
+    }, {
+        nextPositionType: TYPE_HOME,
+        nextPositionIndex
+    })
+
     props.pawnActions.addAction({
-        pawn,
+        pawn: newPawn,
         types: [{
                 type,
-                pawn
+                pawn: newPawn
             },
             {
-                type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                pawn
+                type: CLEAN_AFTER_MOVE_FORWARD,
+                pawn: newPawn
             }
         ]
     });
