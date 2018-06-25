@@ -1,7 +1,7 @@
 import Rules from './Rules';
 import * as Types from "../../redux/actions/actionTypes";
 import unableToMove from './unableToMove';
-import * as Messages from "./../../types/MessagesTypes";
+import {OWN_PAWN_IN_DESTINATION_MSG} from "./../../types/MessagesTypes";
 
 
 
@@ -50,10 +50,10 @@ export default function moveForward(props) {
         });
         return;
     }
-    unableToMove({
+    unableToMove({OWN_PAWN_IN_DESTINATION_MSG,
         actions: props.actions,
         pawn,
-        reason: Messages.OWN_PAWN_IN_DESTINATION
+        reason: OWN_PAWN_IN_DESTINATION_MSG
     });
 
 }
