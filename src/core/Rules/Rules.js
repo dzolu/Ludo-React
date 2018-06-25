@@ -42,7 +42,7 @@ class Rules{
     static ableToMoveHome(props) {
         const home=Rules.getHome(props)
         const {pawn}=props;
-        return !Rules.isInHome(props.pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 && !home[pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1 ]
+        return !Rules.isInHome(pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 && !home[pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1 ]
     }   
 }
 

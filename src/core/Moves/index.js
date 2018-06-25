@@ -1,10 +1,12 @@
 import Queue from '../Queue';
 import { UNABLE_TO_MOVE } from '../../redux/actions/actionTypes';
+import {  toast } from 'react-toastify';
 class Moves {
     static makeMove(props) {
             const pawn= Queue.getPawn(props);
             if(!pawn || !pawn.actions || !pawn.actions.length){ return;}
             if(pawn.actions[0].type=== UNABLE_TO_MOVE){ 
+                toast(pawn.reason);
                 return;
             }
                 pawn.actions.forEach(action => {
