@@ -191,24 +191,12 @@ export const onePlayers = {
     queue: [{
         id: 0,
         name: "Tom",
-        pawns: redPawns2
+        pawns: bluePawns2 
 
-    }, ],
-    gameBoard: {},
-    baseBlue: {},
-    baseGreen: [],
-    baseYellow: [],
-    baseRed: [],
-    homeYellow: [],
-    homeRed: redPawns,
-    homeGreen: [],
-    homeBlue: {}
-
-};
-export const twoPlayers = {
-    gameBoard: {},
+    } ],
+    gameBoard: Board,
     baseBlue: bluePawns,
-    baseGreen: greenPawns,
+    baseGreen: {},
     baseYellow: {},
     baseRed: {},
     homeYellow: {},
@@ -216,14 +204,52 @@ export const twoPlayers = {
     homeGreen: {},
     homeBlue: {}
 };
-export const threePlayers = {
-    gameBoard: {},
+export const twoPlayers = {
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: bluePawns2 
+
+    }, {
+        id: 1,
+        name: "Bob",
+        pawns: redPawns2
+
+    } ],
+    gameBoard: Board,
     baseBlue: bluePawns,
-    baseGreen: greenPawns,
-    baseYellow: yellowPawns,
-    baseRed: [],
+    baseGreen: {},
+    baseYellow: {},
+    baseRed: redPawns,
     homeYellow: {},
-    homeRed: [],
+    homeRed: {},
+    homeGreen: {},
+    homeBlue: {}
+};
+export const threePlayers = {
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: bluePawns2 
+
+    }, {
+        id: 1,
+        name: "Bob",
+        pawns: redPawns2
+
+    }, {
+        id: 2,
+        name: "Jim",
+        pawns: yellowPawns2
+
+    } ],
+    gameBoard: Board,
+    baseBlue: bluePawns,
+    baseGreen: {},
+    baseYellow: yellowPawns,
+    baseRed: redPawns,
+    homeYellow: {},
+    homeRed: {},
     homeGreen: {},
     homeBlue: {}
 };
