@@ -1,14 +1,14 @@
-import * as Types from "../../redux/actions/actionTypes";
+import {UNABLE_TO_MOVE} from "../../redux/actions/actionTypes";
 export default function unableToMove(props) {
     const {
         pawn,
-        actions,
+        pawnActions,
         reason
     } = props;
-    const newPawn = Object.assign({}, ...pawn, reason)
-    actions.addAction({
+    const newPawn = {...pawn, reason};
+    pawnActions.addAction({
         types: [{
-            type: Types.UNABLE_TO_MOVE
+            type: UNABLE_TO_MOVE
         }],
         pawn: newPawn
     });

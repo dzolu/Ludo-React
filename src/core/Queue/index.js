@@ -20,6 +20,9 @@ class Queue {
         return array.length;
     }
     static getPawn(props){
+        if(!props.queue || !props.queue[0] || !props.queue[0].pawns){
+            return;
+        }
         return {...props.queue[0].pawns[props.id]}
     }
     static clearActions(array){

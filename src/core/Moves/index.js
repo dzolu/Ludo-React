@@ -1,16 +1,18 @@
 import Queue from '../Queue';
+import { UNABLE_TO_MOVE } from '../../redux/actions/actionTypes';
 class Moves {
     static makeMove(props) {
-        if (props.queue) {
             const pawn= Queue.getPawn(props);
-            if(pawn.actions && pawn.actions.length>0){
+            if(!pawn || !pawn.actions || !pawn.actions.length){ return;}
+            if(pawn.actions[0].type=== UNABLE_TO_MOVE){ 
+                return;
+            }
                 pawn.actions.forEach(action => {
                     props.actions.dispatchAction(action.type, action.pawn);
                 });
                 Moves.nextPlayer(props);
-            }
+            
          
-        }
     }
     static nextPlayer = (props) => {
         const {
