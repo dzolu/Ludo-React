@@ -27,10 +27,10 @@ class Rules{
         return `${color.toUpperCase()}_${name}`;
     }
     static ableToMoveForward(pawn) {
-        return Rules.isOnBoard(pawn) && pawn.counter <= AppSettings.TOTAL_POSITION_ON_BOARD;
+        return Rules.isOnBoard(pawn) && pawn.counterAfterMove <= AppSettings.TOTAL_POSITION_ON_BOARD;
     }
     static ableToMoveHome(pawn, home) {
-        return !Rules.isInHome(pawn) && pawn.counter > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counter < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
+        return !Rules.isInHome(pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 //&& !home[pawn.counter % AppSettings.TOTAL_POSITION_ON_BOARD ]
     }
     
 }
