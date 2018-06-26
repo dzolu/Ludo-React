@@ -5,8 +5,9 @@ import configureStore from './redux/store/configureStore';
 import BoardContainer from './components/Container/Board.container';
 import * as initialStateMock from './mocks/mockInitialState';
 import DiceContainer from './components/Container/DiceContainer';
+import { ToastContainer } from 'react-toastify';
 
-const store = configureStore(initialStateMock.fourPlayers);
+const store = configureStore(initialStateMock.twoPlayers);
 
 class App extends Component {
     render() {
@@ -20,6 +21,7 @@ class App extends Component {
                         <div className="col-sm-2">
                             <DiceContainer/>
                         </div>
+                        <ToastContainer autoClose={10000} />
                     </div>
 
 
