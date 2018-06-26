@@ -18,6 +18,9 @@ class Message{
       static ownPawnInDestination(player){
         return `${player.name} sorry, but you cannot move this pawn because in destination is already one of your pawn's`;
       }
+      static wrongPawn(player){
+        return `${player.name} your pawns color is ${player.color}. Please click on right pawn.`;
+      }
 }
 
 export default Message;
