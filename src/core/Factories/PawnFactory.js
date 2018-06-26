@@ -5,14 +5,14 @@ class PawnFactory{
         const nextPositionIndex= (positionIndex + result) % AppSettings.TOTAL_POSITION_ON_BOARD;
         const counterAfterMove=  counter + result;
         return {
-            id,
-            color,
-            positionIndex,
-            nextPositionIndex,   
-            positionType,
-            nextPositionType,
-            counter,
-            counterAfterMove
+             id,
+             color,
+             positionIndex,
+             nextPositionIndex,   
+             positionType,
+             nextPositionType,
+             counter,
+             counterAfterMove
         }
     }
 }
