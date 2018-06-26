@@ -13,38 +13,47 @@ const Board = {};
 const bluePawns = {
     0: {
         id: 0,
-        color: COLOR_BLUE
+        color: COLOR_BLUE,
+        actions: [],
+        positionIndex: 0,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
+        
     },
     1: {
         id: 1,
-        color: COLOR_BLUE
+        color: COLOR_BLUE,
+        actions: [],
+        positionIndex: 1,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     2: {
         id: 2,
-        color: COLOR_BLUE
+        color: COLOR_BLUE,
+        actions: [],
+        positionIndex: 2,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     3: {
         id: 3,
-        color: COLOR_BLUE
+        color: COLOR_BLUE,
+        actions: [],
+        positionIndex: 3,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     }
 };
-const bluePawns2 = [{
-        id: 0,
-        color: COLOR_BLUE
-    },
-    {
-        id: 1,
-        color: COLOR_BLUE
-    },
-    {
-        id: 2,
-        color: COLOR_BLUE
-    },
-    {
-        id: 3,
-        color: COLOR_BLUE
-    }
-];
+const bluePawns2 = [bluePawns[0], bluePawns[1], bluePawns[2], bluePawns[3]];
 
 const redPawns = {
     0: {
@@ -52,7 +61,9 @@ const redPawns = {
         color: COLOR_RED,
         actions: [],
         positionIndex: 0,
+        nextPositionIndex:0,
         positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
         counter: 0
     },
     1: {
@@ -60,7 +71,9 @@ const redPawns = {
         color: COLOR_RED,
         actions: [],
         positionIndex: 1,
+        nextPositionIndex:0,
         positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
         counter: 0
     },
     2: {
@@ -68,7 +81,9 @@ const redPawns = {
         color: COLOR_RED,
         actions: [],
         positionIndex: 2,
+        nextPositionIndex:0,
         positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
         counter: 0
     },
     3: {
@@ -76,132 +91,113 @@ const redPawns = {
         color: COLOR_RED,
         actions: [],
         positionIndex: 3,
+        nextPositionIndex:0,
         positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
         counter: 0
     }
 };
 
-const redPawns2 = [{
-        id: 0,
-        color: COLOR_RED,
-        actions: [],
-        positionIndex: 0,
-        positionType: TYPE_BASE,
-        counter: 0
-    },
-    {
-        id: 1,
-        color: COLOR_RED,
-        actions: [],
-        positionIndex: 1,
-        positionType: TYPE_BASE,
-        counter: 0
-    },
-    {
-        id: 2,
-        color: COLOR_RED,
-        actions: [],
-        positionIndex: 2,
-        positionType: TYPE_BASE,
-        counter: 0
-    },
-    {
-        id: 3,
-        color: COLOR_RED,
-        actions: [],
-        positionIndex: 3,
-        positionType: TYPE_BASE,
-        counter: 0
-    }
-];
+const redPawns2 = [redPawns[0], redPawns[1], redPawns[2], redPawns[3]];
 const yellowPawns = {
     0: {
         id: 0,
-        color: COLOR_YELLOW
+        color: COLOR_YELLOW,
+        actions: [],
+        positionIndex: 0,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     1: {
         id: 1,
-        color: COLOR_YELLOW
+        color: COLOR_YELLOW,
+        actions: [],
+        positionIndex: 1,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     2: {
         id: 2,
-        color: COLOR_YELLOW
+        color: COLOR_YELLOW,
+        actions: [],
+        positionIndex: 2,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     3: {
         id: 3,
-        color: COLOR_YELLOW
+        color: COLOR_YELLOW,
+        actions: [],
+        positionIndex: 2,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     }
 };
-const yellowPawns2 = [{
-        id: 0,
-        color: COLOR_YELLOW
-    },
-    {
-        id: 1,
-        color: COLOR_YELLOW
-    },
-    {
-        id: 2,
-        color: COLOR_YELLOW
-    },
-    {
-        id: 3,
-        color: COLOR_YELLOW
-    }
-];
+const yellowPawns2 = [yellowPawns[0], yellowPawns[1], yellowPawns[2], yellowPawns[3]];
 const greenPawns = {
     0: {
         id: 0,
-        color: COLOR_GREEN
+        color: COLOR_GREEN,
+        actions: [],
+        positionIndex: 0,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     1: {
         id: 1,
-        color: COLOR_GREEN
+        color: COLOR_GREEN,
+        actions: [],
+        positionIndex: 1,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     2: {
         id: 2,
-        color: COLOR_GREEN
+        color: COLOR_GREEN,
+        actions: [],
+        positionIndex: 2,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     },
     3: {
         id: 3,
-        color: COLOR_GREEN
+        color: COLOR_GREEN,
+        actions: [],
+        positionIndex: 3,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
     }
 };
 
-const greenPawns2 = [{
-        id: 0,
-        color: COLOR_GREEN
-    },
-    {
-        id: 1,
-        color: COLOR_GREEN
-    },
-    {
-        id: 2,
-        color: COLOR_GREEN
-    },
-    {
-        id: 3,
-        color: COLOR_GREEN
-    }
-];
+const greenPawns2 = [greenPawns[0], greenPawns[1], greenPawns[2], greenPawns[3]];
 
 export const onePlayers = {
-    gameBoard: {},
-    baseBlue: bluePawns,
-    baseGreen: [],
-    baseYellow: [],
-    baseRed: [],
-    homeYellow: [],
-    homeRed: [],
-    homeGreen: [],
-    homeBlue: {}
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: bluePawns2,
+        color: COLOR_BLUE
 
-};
-export const twoPlayers = {
-    gameBoard: {},
+    } ],
+    gameBoard: Board,
     baseBlue: bluePawns,
-    baseGreen: greenPawns,
+    baseGreen: {},
     baseYellow: {},
     baseRed: {},
     homeYellow: {},
@@ -209,14 +205,58 @@ export const twoPlayers = {
     homeGreen: {},
     homeBlue: {}
 };
-export const threePlayers = {
-    gameBoard: {},
+export const twoPlayers = {
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: bluePawns2,
+        color: COLOR_BLUE 
+
+    }, {
+        id: 1,
+        name: "Bob",
+        pawns: redPawns2,
+        color: COLOR_RED
+
+    } ],
+    gameBoard: Board,
     baseBlue: bluePawns,
-    baseGreen: greenPawns,
-    baseYellow: yellowPawns,
-    baseRed: [],
+    baseGreen: {},
+    baseYellow: {},
+    baseRed: redPawns,
     homeYellow: {},
-    homeRed: [],
+    homeRed: {},
+    homeGreen: {},
+    homeBlue: {}
+};
+export const threePlayers = {
+    queue: [{
+        id: 0,
+        name: "Tom",
+        pawns: bluePawns2,
+        color: COLOR_BLUE
+         
+
+    }, {
+        id: 1,
+        name: "Bob",
+        pawns: redPawns2,
+        color: COLOR_RED
+
+    }, {
+        id: 2,
+        name: "Jim",
+        pawns: yellowPawns2,
+        color: COLOR_YELLOW
+
+    } ],
+    gameBoard: Board,
+    baseBlue: bluePawns,
+    baseGreen: {},
+    baseYellow: yellowPawns,
+    baseRed: redPawns,
+    homeYellow: {},
+    homeRed: {},
     homeGreen: {},
     homeBlue: {}
 };
@@ -224,22 +264,26 @@ export const fourPlayers = {
     queue: [{
         id: 0,
         name: "Tom",
-        pawns: redPawns2
+        pawns: bluePawns2        ,
+        color: COLOR_BLUE
 
     }, {
         id: 1,
         name: "Bob",
-        pawns: bluePawns2
+        pawns: redPawns2,
+        color: COLOR_RED
 
     }, {
         id: 2,
         name: "Jim",
-        pawns: yellowPawns2
+        pawns: yellowPawns2,
+        color: COLOR_YELLOW
 
     }, {
         id: 3,
         name: "Tim",
-        pawns: greenPawns2
+        pawns: greenPawns2,
+        color: COLOR_GREEN
 
     }, ],
     gameBoard: Board,

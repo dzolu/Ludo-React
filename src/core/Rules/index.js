@@ -1,5 +1,6 @@
 import leaveBase from './leaveBase';
 import moveForward from './moveForward';
 import moveToHome from './moveHome';
+import unableToLeaveBase from './unableToLeaveBase';
 
-export default  [leaveBase, moveForward, moveToHome];
+export default  [unableToLeaveBase, leaveBase, moveForward, moveToHome];

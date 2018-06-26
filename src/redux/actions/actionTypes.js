@@ -26,8 +26,8 @@ export const GREEN_LEAVE_BASE = `${COLORS.COLOR_GREEN.toUpperCase()}_${LEAVE_BAS
 export const GREEN_MOVE_TO_HOME = `${COLORS.COLOR_GREEN.toUpperCase()}_${MOVE_TO_HOME}`; 
 export const GREEN_BACK_TO_BASE = `${COLORS.COLOR_GREEN.toUpperCase()}_${BACK_TO_BASE}`;
 
-export const BLUE_LEAVE_BASE = `${COLORS.COLOR_RED.toUpperCase()}_${LEAVE_BASE}`; 
-export const BLUE_MOVE_TO_HOME = `${COLORS.COLOR_RED.toUpperCase()}_${MOVE_TO_HOME}`; 
-export const BLUE_BACK_TO_BASE = `${COLORS.COLOR_RED.toUpperCase()}_${BACK_TO_BASE}`;
+export const BLUE_LEAVE_BASE = `${COLORS.COLOR_BLUE.toUpperCase()}_${LEAVE_BASE}`; 
+export const BLUE_MOVE_TO_HOME = `${COLORS.COLOR_BLUE.toUpperCase()}_${MOVE_TO_HOME}`; 
+export const BLUE_BACK_TO_BASE = `${COLORS.COLOR_BLUE.toUpperCase()}_${BACK_TO_BASE}`;
 
 

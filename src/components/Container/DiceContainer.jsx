@@ -22,15 +22,14 @@ const DiceContainer = (props) => {
 function mapStateToProps(state) {
     return {
         gameBoard: state.gameBoard,
-        baseBlue: state.baseBlue,
-        baseGreen: state.baseGreen,
-        baseYellow: state.baseYellow,
-        baseRed: state.baseRed,
-        homeBlue: state.homeBlue,
-        homeGreen: state.homeGreen,
-        homeYellow: state.homeYellow,
-        homeRed: state.homeRed.actions,
-        player: state.player,
+        blueBase: state.baseBlue,
+        greenBase: state.baseGreen,
+        yellowBase: state.baseYellow,
+        redBase: state.baseRed,
+        blueHome: state.homeBlue,
+        greenHome: state.homeGreen,
+        yellowHome: state.homeYellow,
+        redHome: state.homeRed,
         result: state.diceResult,
         queue : state.queue
     }

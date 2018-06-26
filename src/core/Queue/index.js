@@ -20,11 +20,14 @@ class Queue {
         return array.length;
     }
     static getPawn(props){
+        if(!props.queue || !props.queue[0] || !props.queue[0].pawns){
+            return;
+        }
         return {...props.queue[0].pawns[props.id]}
     }
     static clearActions(array){
        return array.map((item)=>{
-                return Object.assign({}, ...item, {actions:[]})
+                return {...item, actions:[]}
         })
     }
     static updatePawnsArray(array, pawn) {
@@ -32,7 +35,7 @@ class Queue {
             if(index !== pawn.id) {
                 return item;
             }
-            return pawn    
+            return {...pawn, positionIndex: pawn.nextPositionIndex, positionType: pawn.nextPositionType, counter: pawn.counterAfterMove }    
         });
     }
 }

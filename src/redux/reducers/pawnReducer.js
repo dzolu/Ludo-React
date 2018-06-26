@@ -1,18 +1,22 @@
 import * as Types from "../actions/actionTypes";
-import {TYPE_HOME } from '../../types/PositionTypes';
-import actionsReducer from './actionsReducer';
 export default function pawnReducer(state, action) {
     switch (action.type) {
         case Types.ADD_ACTION:
-            return {...state, actions: actionsReducer(state.actions, action)};
-        case Types.MOVE_FORWARD:
-            return {...state, positionIndex: action.pawn.nextPositionIndex};
+            return {...state, actions: action.types};
+        case Types.MOVE_FORWARD:    
         case Types.RED_LEAVE_BASE:
-            return {...state,  positionIndex: action.pawn.nextPositionIndex, positionType: action.pawn.nextPositionType, counter: state.counterAfterMove};
+        case Types.BLUE_LEAVE_BASE:
+        case Types.GREEN_LEAVE_BASE:
+        case Types.YELLOW_LEAVE_BASE:
+        case Types.RED_BACK_TO_BASE:
+        case Types.BLUE_BACK_TO_BASE:
+        case Types.GREEN_BACK_TO_BASE:
         case Types.YELLOW_BACK_TO_BASE:
-            return {...state,  positionIndex: action.pawn.nextPositionIndex, positionType: action.pawn.nextPositionType, counter: state.counterAfterMove};
-        case   Types.RED_MOVE_TO_HOME:
-            return {...state, positionIndex: action.pawn.nextPositionIndex, positionType: TYPE_HOME }     
+        case Types.RED_MOVE_TO_HOME:
+        case Types.BLUE_MOVE_TO_HOME:
+        case Types.GREEN_MOVE_TO_HOME:
+        case Types.YELLOW_MOVE_TO_HOME:
+            return {...state,  positionIndex: action.pawn.nextPositionIndex, positionType: action.pawn.nextPositionType, counter: action.pawn.counterAfterMove};  
         default:
             return state;
     }

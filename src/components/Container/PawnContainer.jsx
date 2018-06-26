@@ -4,8 +4,15 @@ import * as pawnActions from "../../redux/actions/pawnActions";
 import {bindActionCreators} from "redux";
 import Pawn from '../Presentation/Pawn';
 import Application from '../../core/Application'
+import Queue from '../../core/Queue';
+import Notification from "../../core/Notifications";
+import Message from '../../core/Messages';
 const PawnContainer = (props) => {
     const move = () => {
+        const player=Queue.first(props.queue);
+        if(props.color !== player.color){
+           return Notification.notifyError(Message.wrongPawn(player));
+        }
         Application.move(props);
     };
    
