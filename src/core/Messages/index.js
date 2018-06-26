@@ -1,12 +1,16 @@
 import Queue from '../Queue';
-import { UNABLE_TO_LEAVE_BASE, NEXT_PLAYER_MSG } from '../../types/MessagesTypes';
+import { UNABLE_TO_LEAVE_BASE, NEXT_PLAYER_MSG, GAME_BEGIN } from '../../types/MessagesTypes';
 class Messages{
     static unableToLeaveHome(props){
         return  `${Queue.first(props.queue).name} ${UNABLE_TO_LEAVE_BASE} ${props.result}`
       }
       static nextPlayer(props){
         const nextPlayer=Queue.first(props.queue);
-       return `${nextPlayer.name} (${nextPlayer.color} pawns) ${NEXT_PLAYER_MSG}`
+        return `${nextPlayer.name} (${nextPlayer.color} pawns) ${NEXT_PLAYER_MSG}`
+      }
+      static gameBegin(props){
+        const player=Queue.first(props.queue);
+        return `${player.name} (${player.color} pawns) ${GAME_BEGIN}`
       }
 }
 
