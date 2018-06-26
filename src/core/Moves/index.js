@@ -1,21 +1,18 @@
 import Queue from '../Queue';
 import { UNABLE_TO_MOVE } from '../../redux/actions/actionTypes';
-import Messages from '../Messages';
+import Message from '../Messages';
 import Notification from '../Notifications';
 class Moves {
     static makeMove(props) {
             const pawn= Queue.getPawn(props);
             if(!pawn || !pawn.actions || !pawn.actions.length){ return;}
             if(pawn.actions[0].type=== UNABLE_TO_MOVE){ 
-                Notification.notifyError(pawn.message);
-                return;
+                return  Notification.notifyError(pawn.message);
             }
                 pawn.actions.forEach(action => {
                     props.actions.dispatchAction(action.type, action.pawn);
                 });
-                Moves.nextPlayer(props);
-            
-         
+                Moves.nextPlayer(props);         
     }
     static nextPlayer = (props) => {
         const {
@@ -29,7 +26,7 @@ class Moves {
         player={...player, pawns: Queue.clearActions(player.pawns)};
         const queueNew = Queue.add({queue:Queue.remove(queue), player}); 
         actions.nextPlayer(queueNew);
-        Notification.notifyInfo(Messages.nextPlayer({...props, queue:queueNew}));
+        Notification.notifyInfo(Message.nextPlayer(Queue.first(queueNew)));
     }
 }
 

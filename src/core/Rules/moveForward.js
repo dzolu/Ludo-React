@@ -1,14 +1,16 @@
 import Rules from './Rules';
 import * as Types from "../../redux/actions/actionTypes";
-import unableToMove from './unableToMove';
-import {OWN_PAWN_IN_DESTINATION_MSG} from "./../../types/MessagesTypes";
+import Notification from '../Notifications';
+import Message from '../Messages';
+import Queue from '../Queue';
 
 
 
 export default function moveForward(props) {
     const {
         pawn,
-        gameBoard
+        gameBoard, 
+        queue
     } = props;
     if (!Rules.ableToMoveForward(pawn)) {
         return;
@@ -50,10 +52,6 @@ export default function moveForward(props) {
         });
         return;
     }
-    unableToMove({OWN_PAWN_IN_DESTINATION_MSG,
-        actions: props.actions,
-        pawn,
-        reason: OWN_PAWN_IN_DESTINATION_MSG
-    });
-
+    
+    Notification.add({...props, message: Message.ownPawnInDestination(Queue.first(queue))})
 }
