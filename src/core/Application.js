@@ -2,6 +2,7 @@ import rules from "./Rules/Rules";
 import moves from "./Moves"
 import PawnFactory from './Factories/PawnFactory';
 import Queue from "./Queue";
+import Message from './Messages';
 class Application {
     static analize(props) {
         const player=Queue.first(props.queue)
@@ -14,6 +15,17 @@ class Application {
     }
     static move(props){
         props && moves.makeMove(props);
+    }
+    static analizeAfterPropsDidUpdate(props){
+        const {queue, actions, result}=props
+        const player=Queue.first(queue)
+        if(player.pawns.filter(this.unableToMoveFilter).length){
+            return;
+        }
+        Notification.notifyInfo(Message.unableToMove({player, result}));
+            const queueNew = Queue.add({queue:Queue.remove(queue), player}); 
+            actions.nextPlayer(queueNew);
+            Notification.notifyInfo(Message.nextPlayer(Queue.first(queueNew)));
     }
 }
 

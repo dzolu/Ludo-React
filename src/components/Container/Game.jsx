@@ -9,25 +9,20 @@ import Queue from '../../core/Queue';
 import { UNABLE_TO_MOVE } from '../../redux/actions/actionTypes';
 import * as pawnActions from "../../redux/actions/pawnActions";
 import {bindActionCreators} from "redux";
+import Application from '../../core/Application';
 
 class Game extends Component{
         componentDidMount() {
           Notification.notifyInfo(Message.gameBegin(Queue.first(this.props.queue)));
         }
         componentDidUpdate(prevProps){
-            const {queue, actions, result}=this.props;
-            const player=Queue.first(queue)
+            const player=Queue.first(this.props.queue)
             const prevPlayer= Queue.first(prevProps.queue)
            if(player.id !== prevPlayer.id){
                return;
            }
-            if(player.pawns.filter(this.unableToMoveFilter).length){
-                return;
-            }
-            Notification.notifyInfo(Message.unableToMove({player, result}));
-            const queueNew = Queue.add({queue:Queue.remove(queue), player}); 
-            actions.nextPlayer(queueNew);
-            Notification.notifyInfo(Message.nextPlayer(Queue.first(queueNew)));
+           Application.analizeAfterPropsDidUpdate(this.props);
+           
         }
       
         unableToMoveFilter(pawn){
