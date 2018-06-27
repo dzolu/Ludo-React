@@ -1,10 +1,10 @@
 import * as COLORS from "../../types/ColorTypes";
 
 //general
-export var BEAT_PAWN = "BEAT_PAWN";
-export var UNABLE_TO_MOVE = "UNABLE_TO_MOVE";
-export var ADD_ACTION = "ADD_ACTION";
-export var MOVE_FORWARD = "MOVE_FORWARD";
+export const BEAT_PAWN = "BEAT_PAWN";
+export const UNABLE_TO_MOVE = "UNABLE_TO_MOVE";
+export const ADD_ACTION = "ADD_ACTION";
+export const MOVE_FORWARD = "MOVE_FORWARD";
 export const THROW_DICE = "THROW_DICE";
 export const LEAVE_BASE = "LEAVE_BASE";
 export const BACK_TO_BASE = "BACK_TO_BASE";
