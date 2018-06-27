@@ -5,7 +5,10 @@ import Notification from '../Notifications';
 class Moves {
     static makeMove(props) {
             const pawn= Queue.getPawn(props);
-            if(!pawn || !pawn.actions || !pawn.actions.length){ return;}
+            if(!pawn || !pawn.actions || !pawn.actions.length){
+                console.error("Pawn is empty or do not contain an actions. Are you setup your queue and actions in pawn?");
+                return;
+            }
             if(pawn.actions[0].type=== UNABLE_TO_MOVE){ 
                 return  Notification.notifyError(pawn.message);
             }
