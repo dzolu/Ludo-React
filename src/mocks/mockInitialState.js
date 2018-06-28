@@ -5,27 +5,28 @@ import {
     COLOR_YELLOW
 } from '../types/ColorTypes';
 import {
-    TYPE_BASE
-} from "../types/PositionTypes"
+    TYPE_BASE,
+    TYPE_BOARD
+} from '../types/PositionTypes';
 
 
-const Board = {};
+
 const bluePawns = {
     0: {
         id: 0,
         color: COLOR_BLUE,
-        actions: [],
+        movement: [],
         positionIndex: 0,
         nextPositionIndex:0,
-        positionType: TYPE_BASE,
-        nextPositionType:TYPE_BASE,
+        positionType: TYPE_BOARD,
+        nextPositionType:TYPE_BOARD,
         counter: 0
         
     },
     1: {
         id: 1,
         color: COLOR_BLUE,
-        actions: [],
+        movement: [],
         positionIndex: 1,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -35,7 +36,7 @@ const bluePawns = {
     2: {
         id: 2,
         color: COLOR_BLUE,
-        actions: [],
+        movement: [],
         positionIndex: 2,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -45,7 +46,7 @@ const bluePawns = {
     3: {
         id: 3,
         color: COLOR_BLUE,
-        actions: [],
+        movement: [],
         positionIndex: 3,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -59,7 +60,7 @@ const redPawns = {
     0: {
         id: 0,
         color: COLOR_RED,
-        actions: [],
+        movement: [],
         positionIndex: 0,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -69,7 +70,7 @@ const redPawns = {
     1: {
         id: 1,
         color: COLOR_RED,
-        actions: [],
+        movement: [],
         positionIndex: 1,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -79,7 +80,7 @@ const redPawns = {
     2: {
         id: 2,
         color: COLOR_RED,
-        actions: [],
+        movement: [],
         positionIndex: 2,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -89,7 +90,7 @@ const redPawns = {
     3: {
         id: 3,
         color: COLOR_RED,
-        actions: [],
+        movement: [],
         positionIndex: 3,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -103,7 +104,7 @@ const yellowPawns = {
     0: {
         id: 0,
         color: COLOR_YELLOW,
-        actions: [],
+        movement: [],
         positionIndex: 0,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -113,7 +114,7 @@ const yellowPawns = {
     1: {
         id: 1,
         color: COLOR_YELLOW,
-        actions: [],
+        movement: [],
         positionIndex: 1,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -123,7 +124,7 @@ const yellowPawns = {
     2: {
         id: 2,
         color: COLOR_YELLOW,
-        actions: [],
+        movement: [],
         positionIndex: 2,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -133,7 +134,7 @@ const yellowPawns = {
     3: {
         id: 3,
         color: COLOR_YELLOW,
-        actions: [],
+        movement: [],
         positionIndex: 2,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -146,7 +147,7 @@ const greenPawns = {
     0: {
         id: 0,
         color: COLOR_GREEN,
-        actions: [],
+        movement: [],
         positionIndex: 0,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -156,7 +157,7 @@ const greenPawns = {
     1: {
         id: 1,
         color: COLOR_GREEN,
-        actions: [],
+        movement: [],
         positionIndex: 1,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -166,7 +167,7 @@ const greenPawns = {
     2: {
         id: 2,
         color: COLOR_GREEN,
-        actions: [],
+        movement: [],
         positionIndex: 2,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -176,7 +177,7 @@ const greenPawns = {
     3: {
         id: 3,
         color: COLOR_GREEN,
-        actions: [],
+        movement: [],
         positionIndex: 3,
         nextPositionIndex:0,
         positionType: TYPE_BASE,
@@ -186,17 +187,47 @@ const greenPawns = {
 };
 
 const greenPawns2 = [greenPawns[0], greenPawns[1], greenPawns[2], greenPawns[3]];
+const Board = {0:bluePawns[0]};
 
+
+//players
+const tom={
+    id: 0,
+    name: "Tom",
+    pawns: bluePawns2,
+    color: COLOR_BLUE,
+    madeMove:false
+
+}
+const bob= {
+    id: 1,
+    name: "Bob",
+    pawns: redPawns2,
+    color: COLOR_RED,
+    madeMove:false
+
+}
+
+const jim={
+    id: 2,
+    name: "Jim",
+    pawns: yellowPawns2,
+    color: COLOR_YELLOW,
+    madeMove:false
+
+}
+const tim={
+    id: 3,
+    name: "Tim",
+    pawns: greenPawns2,
+    color: COLOR_GREEN,
+    madeMove:false
+
+}
 export const onePlayers = {
-    queue: [{
-        id: 0,
-        name: "Tom",
-        pawns: bluePawns2,
-        color: COLOR_BLUE
-
-    } ],
+    queue: [tom],
     gameBoard: Board,
-    baseBlue: bluePawns,
+    baseBlue: {},
     baseGreen: {},
     baseYellow: {},
     baseRed: {},
@@ -206,21 +237,38 @@ export const onePlayers = {
     homeBlue: {}
 };
 export const twoPlayers = {
-    queue: [{
-        id: 0,
-        name: "Tom",
-        pawns: bluePawns2,
-        color: COLOR_BLUE 
-
-    }, {
-        id: 1,
-        name: "Bob",
-        pawns: redPawns2,
-        color: COLOR_RED
-
-    } ],
+    queue: [tom,bob],
     gameBoard: Board,
-    baseBlue: bluePawns,
+    baseBlue: {1: {
+        id: 1,
+        color: COLOR_BLUE,
+        movement: [],
+        positionIndex: 1,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
+    },
+    2: {
+        id: 2,
+        color: COLOR_BLUE,
+        movement: [],
+        positionIndex: 2,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
+    },
+    3: {
+        id: 3,
+        color: COLOR_BLUE,
+        movement: [],
+        positionIndex: 3,
+        nextPositionIndex:0,
+        positionType: TYPE_BASE,
+        nextPositionType:TYPE_BASE,
+        counter: 0
+    }},
     baseGreen: {},
     baseYellow: {},
     baseRed: redPawns,
@@ -230,26 +278,7 @@ export const twoPlayers = {
     homeBlue: {}
 };
 export const threePlayers = {
-    queue: [{
-        id: 0,
-        name: "Tom",
-        pawns: bluePawns2,
-        color: COLOR_BLUE
-         
-
-    }, {
-        id: 1,
-        name: "Bob",
-        pawns: redPawns2,
-        color: COLOR_RED
-
-    }, {
-        id: 2,
-        name: "Jim",
-        pawns: yellowPawns2,
-        color: COLOR_YELLOW
-
-    } ],
+    queue: [tom, bob,  jim],
     gameBoard: Board,
     baseBlue: bluePawns,
     baseGreen: {},
@@ -260,32 +289,9 @@ export const threePlayers = {
     homeGreen: {},
     homeBlue: {}
 };
+
 export const fourPlayers = {
-    queue: [{
-        id: 0,
-        name: "Tom",
-        pawns: bluePawns2        ,
-        color: COLOR_BLUE
-
-    }, {
-        id: 1,
-        name: "Bob",
-        pawns: redPawns2,
-        color: COLOR_RED
-
-    }, {
-        id: 2,
-        name: "Jim",
-        pawns: yellowPawns2,
-        color: COLOR_YELLOW
-
-    }, {
-        id: 3,
-        name: "Tim",
-        pawns: greenPawns2,
-        color: COLOR_GREEN
-
-    }, ],
+    queue:[tom, bob,  jim, tim], 
     gameBoard: Board,
     baseBlue: bluePawns,
     baseGreen: greenPawns,

@@ -25,6 +25,10 @@ class Queue {
         }
         return {...props.queue[0].pawns[props.id]}
     }
+    static getNextPlayer(queue){
+    
+        return {...queue[1]}
+    }
     static clearActions(array){
        return array.map((item)=>{
                 return {...item, actions:[]}

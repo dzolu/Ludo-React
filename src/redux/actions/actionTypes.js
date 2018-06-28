@@ -12,6 +12,7 @@ export const MOVE_TO_HOME = "MOVE_TO_HOME";
 export const NEXT_PLAYER="NEXT_PLAYER";
 export const CLEAN_AFTER_MOVE_FORWARD ="CLEAN_AFTER_MOVE_FORWARD";
 export const ADD_LEAVE_BASE_ACTION = "ADD_LEAVE_BASE_ACTION";
+export const DID_MAKE_MOVE="DID_MAKE_MOVE";
 
 //pawns 
 export const YELLOW_BACK_TO_BASE = `${COLORS.COLOR_YELLOW.toUpperCase()}_${BACK_TO_BASE}`;

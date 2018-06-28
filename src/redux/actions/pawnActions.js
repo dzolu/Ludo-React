@@ -14,3 +14,7 @@ export function nextPlayer(queue) {
 export function clearAfterMove(pawn) {
     return {type: Types.CLEAN_AFTER_MOVE_FORWARD, pawn}
 }
+
+export function didMakeMove(flag){
+    return{type: Types.DID_MAKE_MOVE, flag}
+}
