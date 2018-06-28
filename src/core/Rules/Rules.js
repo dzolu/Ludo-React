@@ -7,6 +7,7 @@ import {
 } from "../../types/PositionTypes";
 import { TOTAL_POSITION_ON_BOARD } from '../../AppSettings';
 import { UNABLE_TO_MOVE } from '../../redux/actions/actionTypes';
+import allPawnsInhome from "../Filters/allInHomeFilter";
 
 class Rules{
     static check(props){
@@ -57,7 +58,11 @@ class Rules{
         const home=Rules.getHome(props)
         const {pawn}=props;
         return !Rules.isInHome(pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 && !home[pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1 ]
-    }   
+    }  
+    static gameOver(player){
+        return player.pawns.filter(allPawnsInhome).length===4;
+    } 
+
 }
 
 export default Rules;
