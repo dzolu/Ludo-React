@@ -21,13 +21,13 @@ class Application {
     static analizeAfterPropsDidUpdate(props){
         const {queue, actions, result}=props
         const player=Queue.first(queue)
-        if(player.pawns.filter(unableToMoveFilter).length){
-            return;
-        }
+        if(player.pawns.filter(unableToMoveFilter).length===4){
             Notification.notifyInfo(Message.unableToMove({player, result}));
             const queueNew = Queue.add({queue:Queue.remove(queue), player}); 
             actions.nextPlayer(queueNew);
             Notification.notifyInfo(Message.nextPlayer(Queue.first(queueNew)));
+            return;
+        }
     }
 }
 
