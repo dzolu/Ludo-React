@@ -26,6 +26,10 @@ class Message {
     static doubleThrows(player) {
         return `${player.name} you have throw the dice. Please make a move.`;
     }
+
+    static secondThrow(player) {
+        return `Congratulation ${player.name} you have throw 6. You have a second chance.`;
+    }
 }
 
 export default Message;

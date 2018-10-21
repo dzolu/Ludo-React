@@ -17,7 +17,6 @@ class Moves {
             props.actions.dispatchAction(action.type, action.pawn);
         });
         props.actions.didMakeMove(true);
-       // Moves.nextPlayer(props);
     }
 
     static nextPlayer = (props) => {

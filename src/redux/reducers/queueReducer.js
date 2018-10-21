@@ -23,6 +23,7 @@ export default function queueReducer(state = [], action) {
         case Types.GREEN_MOVE_TO_HOME:
         case Types.YELLOW_MOVE_TO_HOME:
         case Types.THROW_DICE:
+        case Types.HAS_SECOND_MOVE:
             return [playerReducer(state[0], action), ...state.slice(1)];
         default:
             return state;

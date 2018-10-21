@@ -24,6 +24,8 @@ export default function playerReducer(state = {}, action) {
             return {...state, madeMove: false, throwDice: false};
         case Types.THROW_DICE:
             return {...state, throwDice: true};
+        case Types.HAS_SECOND_MOVE:
+            return {...state, throwDice: false, madeMove: false};
         default:
             return state;
     }
