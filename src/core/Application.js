@@ -7,7 +7,7 @@ import unableToMoveFilter from './Filters/unableToMoveFilter';
 import Notification from './Notifications';
 
 class Application {
-    static analize(props) {
+    static analyze(props) {
         const player = Queue.first(props.queue);
         if (!player) {
             return;
@@ -23,7 +23,7 @@ class Application {
         props && moves.makeMove(props);
     }
 
-    static analizeAfterPropsDidUpdate(props) {
+    static analyzeAfterPropsDidUpdate(props) {
         const {queue, actions, result} = props;
         const player = Queue.first(queue);
         if (player.madeMove && result === 6) {

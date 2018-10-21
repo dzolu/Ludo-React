@@ -21,7 +21,7 @@ class Game extends Component{
             if(player.id !== prevPlayer.id){
                 return;
             }
-            Application.analizeAfterPropsDidUpdate(this.props);
+            Application.analyzeAfterPropsDidUpdate(this.props);
         }
            
         render(){

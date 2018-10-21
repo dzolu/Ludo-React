@@ -20,7 +20,7 @@ const DiceContainer = (props) => {
         }
         const result = Math.floor(Math.random() * (6)) + 1;
         actions.throwDice(result);
-        Application.analize({...props, result: result});
+        Application.analyze({...props, result: result});
     };
 
 
