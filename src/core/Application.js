@@ -21,7 +21,6 @@ class Application {
     static analizeAfterPropsDidUpdate(props){
         const {queue, actions, result}=props;
         const player=Queue.first(queue);
-        debugger;
         if(player.madeMove){
             actions.nextPlayer(queue);
             Notification.notifyInfo(Message.nextPlayer(Queue.getNextPlayer(queue)));
@@ -31,7 +30,6 @@ class Application {
              Notification.notifyInfo(Message.unableToMove({player, result}));
              actions.nextPlayer(queue);
              Notification.notifyInfo(Message.nextPlayer(Queue.getNextPlayer(queue)));
-
         }
     }
 }

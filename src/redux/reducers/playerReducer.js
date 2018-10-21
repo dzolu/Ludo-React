@@ -21,7 +21,9 @@ export default function playerReducer(state = {}, action) {
         case Types.DID_MAKE_MOVE:
             return {...state, madeMove: action.flag};
         case Types.NEXT_PLAYER:
-            return {...state, madeMove: false};
+            return {...state, madeMove: false, throwDice: false};
+        case Types.THROW_DICE:
+            return {...state, throwDice: true};
         default:
             return state;
     }
