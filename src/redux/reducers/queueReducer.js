@@ -5,7 +5,7 @@ import playerReducer from './playerReducer';
 export default function queueReducer(state = [], action) {
     switch (action.type) {
         case Types.NEXT_PLAYER:
-        return [action.queue.slice(1,action.queue.length),
+        return [...action.queue.slice(1,action.queue.length),
                 playerReducer(action.queue[0], action) ];
         case Types.ADD_ACTION:
         case Types.DID_MAKE_MOVE:   

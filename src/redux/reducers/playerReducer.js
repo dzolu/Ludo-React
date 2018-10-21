@@ -18,10 +18,10 @@ export default function playerReducer(state = {}, action) {
         case Types.GREEN_MOVE_TO_HOME:
         case Types.YELLOW_MOVE_TO_HOME:
             return {...state, pawns: pawnsReducer(state.pawns, action)};
-        case Types.DID_MAKE_MOVE:    
-            return {...state, madeMove:action.flag};
-        case Types.NEXT_PLAYER:    
-            return {...state, madeMove:false};    
+        case Types.DID_MAKE_MOVE:
+            return {...state, madeMove: action.flag};
+        case Types.NEXT_PLAYER:
+            return {...state, madeMove: false};
         default:
             return state;
     }
