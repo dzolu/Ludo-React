@@ -11,12 +11,12 @@ const Dice=(props)=>{
 
     return(
         <div className={`dice dice--${adapter[props.result]}`} onClick={props.throwDice}>
-            <div className="dice__dot"></div>
-            <div className="dice__dot"></div>
-            <div className="dice__dot"></div>
-            <div className="dice__dot"></div>
-            <div className="dice__dot"></div>
-            <div className="dice__dot"></div>
+            <div className="dice__dot"/>
+            <div className="dice__dot"/>
+            <div className="dice__dot"/>
+            <div className="dice__dot"/>
+            <div className="dice__dot"/>
+            <div className="dice__dot"/>
         </div>
 
     )

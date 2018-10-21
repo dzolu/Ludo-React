@@ -5,13 +5,22 @@ import * as diceActions from "../../redux/actions/diceActions";
 import {bindActionCreators} from "redux";
 import Application from '../../core/Application'
 import * as pawnActions from "../../redux/actions/pawnActions";
+import Queue from "../../core/Queue";
+import Notification from "../../core/Notifications";
+import Message from "../../core/Messages";
 
 
 const DiceContainer = (props) => {
     const throwDice = () => {
+        const {actions, queue} = props;
+        const player = Queue.first(queue);
+        if (player.throwDice) {
+            Notification.notifyInfo(Message.doubleThrows(player));
+            return;
+        }
         const result = Math.floor(Math.random() * (6)) + 1;
-        props.actions.throwDice(result);
-        Application.analize({...props, result: result});
+        actions.throwDice(result);
+        Application.analyze({...props, result: result});
     };
 
 
@@ -31,7 +40,7 @@ function mapStateToProps(state) {
         yellowHome: state.homeYellow,
         redHome: state.homeRed,
         result: state.diceResult,
-        queue : state.queue
+        queue: state.queue
     }
 }
 
