@@ -4,7 +4,7 @@ import Message from '../Messages';
 import Notification from '../Notifications';
 class Moves {
     static makeMove(props) {
-        const pawn= Queue.getPawn(props)
+        const pawn= Queue.getPawn(props);
         const {movement, message}=pawn;
             if(!movement || !movement.length){
                 return;

@@ -7,7 +7,7 @@ import unableToMoveFilter from './Filters/unableToMoveFilter';
 import Notification from './Notifications';
 class Application {
     static analize(props) {
-        const player=Queue.first(props.queue)
+        const player=Queue.first(props.queue);
         if(!player){ return; }           
         player.pawns.forEach((item)=>{ 
                 const pawn= PawnFactory.create({...item, result:props.result});     
@@ -19,18 +19,18 @@ class Application {
         props && moves.makeMove(props);
     }
     static analizeAfterPropsDidUpdate(props){
-        const {queue, actions, result}=props
-        const player=Queue.first(queue)
+        const {queue, actions, result}=props;
+        const player=Queue.first(queue);
         if(player.madeMove){
             actions.nextPlayer(queue);
-            Notification.notifyInfo(Message.nextPlayer(Queue.getNextPlayer(queue)))
+            Notification.notifyInfo(Message.nextPlayer(Queue.getNextPlayer(queue)));
             return;
         }
         if(player.pawns.filter(unableToMoveFilter).length===4){
              Notification.notifyInfo(Message.unableToMove({player, result}));
              actions.nextPlayer(queue);
              Notification.notifyInfo(Message.nextPlayer(Queue.getNextPlayer(queue)));
-            return;
+
         }
     }
 }

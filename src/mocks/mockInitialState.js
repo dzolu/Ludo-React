@@ -198,7 +198,7 @@ const tom={
     color: COLOR_BLUE,
     madeMove:false
 
-}
+};
 const bob= {
     id: 1,
     name: "Bob",
@@ -206,7 +206,7 @@ const bob= {
     color: COLOR_RED,
     madeMove:false
 
-}
+};
 
 const jim={
     id: 2,
@@ -215,7 +215,7 @@ const jim={
     color: COLOR_YELLOW,
     madeMove:false
 
-}
+};
 const tim={
     id: 3,
     name: "Tim",
@@ -223,7 +223,7 @@ const tim={
     color: COLOR_GREEN,
     madeMove:false
 
-}
+};
 export const onePlayers = {
     queue: [tom],
     gameBoard: Board,
