@@ -8,6 +8,7 @@ export default function queueReducer(state = [], action) {
         return [...action.queue.slice(1,action.queue.length),
                 playerReducer(action.queue[0], action) ];
         case Types.ADD_ACTION:
+        case Types.ADD_ACTION2:
         case Types.DID_MAKE_MOVE:   
         case Types.MOVE_FORWARD:    
         case Types.RED_LEAVE_BASE:

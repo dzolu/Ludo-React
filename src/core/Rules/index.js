@@ -1,6 +1,13 @@
-import leaveBase from './leaveBase';
-import moveForward from './moveForward';
-import moveToHome from './moveHome';
-import unableToLeaveBase from './unableToLeaveBase';
+import {
+    beatPawn,
+    leaveBase,
+    moveForward,
+    moveToHome,
+    noPawnOnBoard,
+    secondChance,
+    unableToLeaveBase,
+    win
+} from "./rules";
 
-export default  [unableToLeaveBase, leaveBase, moveForward, moveToHome];
+
+export default  [unableToLeaveBase, leaveBase, moveForward, moveToHome, noPawnOnBoard, beatPawn, secondChance, win];

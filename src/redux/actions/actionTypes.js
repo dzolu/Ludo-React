@@ -4,6 +4,7 @@ import * as COLORS from "../../types/ColorTypes";
 export const BEAT_PAWN = "BEAT_PAWN";
 export const UNABLE_TO_MOVE = "UNABLE_TO_MOVE";
 export const ADD_ACTION = "ADD_ACTION";
+export const ADD_ACTION2 = "ADD_ACTION2";
 export const MOVE_FORWARD = "MOVE_FORWARD";
 export const THROW_DICE = "THROW_DICE";
 export const LEAVE_BASE = "LEAVE_BASE";

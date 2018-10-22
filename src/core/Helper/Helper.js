@@ -18,6 +18,10 @@ class Helper {
         })
     }
 
+    static ableToMoveToPosition(pawn, position) {
+        return !position || position.color !== pawn.color;
+    }
+
     static isAbleToMove(pawn) {
         if (!pawn) {
             return false;
