@@ -1,6 +1,5 @@
 import Queue from '../Queue';
 import {UNABLE_TO_MOVE} from '../../redux/actions/actionTypes';
-import Message from '../Messages';
 import Notification from '../Notifications';
 
 class Moves {
@@ -17,16 +16,6 @@ class Moves {
             props.actions.dispatchAction(action.type, action.pawn);
         });
         props.actions.didMakeMove(true);
-    }
-
-    static nextPlayer = (props) => {
-        const {
-            queue,
-            actions
-        } = props;
-
-        actions.nextPlayer(queue);
-        Notification.notifyInfo(Message.nextPlayer(Queue.first(queue)));
     }
 }
 

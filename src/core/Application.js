@@ -1,4 +1,4 @@
-import rules from "./Rules/Rules";
+import rules from "./Helper/Helper";
 import moves from "./Moves"
 import PawnFactory from './Factories/PawnFactory';
 import Queue from "./Queue";
