@@ -7,7 +7,7 @@ import {
 } from "../../types/PositionTypes";
 import {BLUE_START_INDEX, GREEN_START_INDEX, TOTAL_POSITION_ON_BOARD, YELLOW_START_INDEX} from '../../AppSettings';
 import {UNABLE_TO_MOVE} from '../../redux/actions/actionTypes';
-import allPawnsInhome from "../Filters/allInHomeFilter";
+import allPawnsInHome from "../Filters/allInHomeFilter";
 import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from "../../types/ColorTypes";
 import {RED_START_INDEX} from "./../../AppSettings";
 
@@ -66,7 +66,7 @@ class Rules {
     }
 
     static gameOver(player) {
-        return player.pawns.filter(allPawnsInhome).length === 4;
+        return player.pawns.filter(allPawnsInHome).length === 4;
     }
 
     static GetStartIndex(color) {
