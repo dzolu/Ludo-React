@@ -1,4 +1,4 @@
-import Rules from './Rules';
+import Helper from '../Helper/Helper';
 import * as Types from "../../redux/actions/actionTypes";
 import Notification from '../Notifications';
 import Message from '../Messages';
@@ -12,7 +12,7 @@ export default function moveForward(props) {
         gameBoard, 
         queue
     } = props;
-    if (!Rules.ableToMoveForward(pawn)) {
+    if (!Helper.ableToMoveForward(pawn)) {
         return;
     }
     const pawnInDestination = gameBoard[pawn.nextPositionIndex];
@@ -33,7 +33,7 @@ export default function moveForward(props) {
         return;
     }
     if (pawnInDestination.color !== pawn.color) {
-        const type = Rules.createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
+        const type = Helper.createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
 
         props.pawnActions.addAction({
             pawn,

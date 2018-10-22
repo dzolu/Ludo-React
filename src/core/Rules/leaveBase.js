@@ -1,4 +1,4 @@
-import Rules from './Rules';
+import Helper from '../Helper/Helper';
 import * as AppSettings from "./../../AppSettings";
 import * as Types from "../../redux/actions/actionTypes";
 import {TYPE_BOARD} from '../../types/PositionTypes';
@@ -9,12 +9,12 @@ export default function leaveBase(props) {
         result,
         gameBoard
     } = props;
-    if (!Rules.isInBase(pawn)) {
+    if (!Helper.isInBase(pawn)) {
         return;
     }
-    const startIndex = Rules.GetStartIndex(pawn.color);
+    const startIndex = Helper.GetStartIndex(pawn.color);
     if ((result === 1 || result === 6) && !gameBoard[startIndex]) {
-        const type = Rules.createActionType(pawn.color, Types.LEAVE_BASE);
+        const type = Helper.createActionType(pawn.color, Types.LEAVE_BASE);
         const newPawn = {
             ...pawn,
             nextPositionType: TYPE_BOARD,

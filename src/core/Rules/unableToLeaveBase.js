@@ -1,4 +1,4 @@
-import Rules from './Rules';
+import Helper from '../Helper/Helper';
 import Notification from '../Notifications';
 import Message from "../Messages";
 import Queue from '../Queue';
@@ -8,7 +8,7 @@ export default function unableToLeaveBase(props) {
         result,
         queue
     } = props;
-    if (!Rules.isInBase(pawn)) {
+    if (!Helper.isInBase(pawn)) {
         return;
     }
     if (result !== 1 || result !== 6) {

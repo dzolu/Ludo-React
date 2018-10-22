@@ -1,5 +1,5 @@
-import rules from "./index"
-import * as AppSettings from "./../../AppSettings";
+import rules from "../Rules/index"
+import * as AppSettings from "../../AppSettings";
 import {
     TYPE_BASE,
     TYPE_BOARD,
@@ -9,9 +9,9 @@ import {BLUE_START_INDEX, GREEN_START_INDEX, TOTAL_POSITION_ON_BOARD, YELLOW_STA
 import {UNABLE_TO_MOVE} from '../../redux/actions/actionTypes';
 import allPawnsInHome from "../Filters/allInHomeFilter";
 import {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_YELLOW} from "../../types/ColorTypes";
-import {RED_START_INDEX} from "./../../AppSettings";
+import {RED_START_INDEX} from "../../AppSettings";
 
-class Rules {
+class Helper {
     static check(props) {
         rules.forEach(rule => {
             rule(props)
@@ -56,13 +56,13 @@ class Rules {
     }
 
     static ableToMoveForward(pawn) {
-        return Rules.isAbleToMove(pawn) && Rules.isOnBoard(pawn) && pawn.counterAfterMove <= AppSettings.TOTAL_POSITION_ON_BOARD;
+        return Helper.isAbleToMove(pawn) && Helper.isOnBoard(pawn) && pawn.counterAfterMove <= AppSettings.TOTAL_POSITION_ON_BOARD;
     }
 
     static ableToMoveHome(props) {
-        const home = Rules.getHome(props);
+        const home = Helper.getHome(props);
         const {pawn} = props;
-        return !Rules.isInHome(pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 && !home[pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1]
+        return !Helper.isInHome(pawn) && pawn.counterAfterMove > AppSettings.TOTAL_POSITION_ON_BOARD && pawn.counterAfterMove < 44 && !home[pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1]
     }
 
     static gameOver(player) {
@@ -86,4 +86,4 @@ class Rules {
 
 }
 
-export default Rules;
+export default Helper;

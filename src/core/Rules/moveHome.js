@@ -1,4 +1,4 @@
-import Rules from './Rules';
+import Helper from '../Helper/Helper';
 import {
     TYPE_HOME
 } from '../../types/PositionTypes';
@@ -11,10 +11,10 @@ export default function moveToHome(props) {
     const nextPositionIndex = props.pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1;
     const pawn= Object.assign({}, props.pawn, {nextPositionIndex, nextPositionType: TYPE_HOME});
     
-    if (!Rules.ableToMoveHome({...props, pawn})) {
+    if (!Helper.ableToMoveHome({...props, pawn})) {
         return;
     }
-    const type = Rules.createActionType(pawn.color, MOVE_TO_HOME);
+    const type = Helper.createActionType(pawn.color, MOVE_TO_HOME);
         props.pawnActions.addAction({
         pawn,
         types: [{
