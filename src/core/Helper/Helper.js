@@ -31,7 +31,9 @@ class Helper {
         }
         return pawn.actions[0].type !== UNABLE_TO_MOVE
     }
-
+    static ableToMoveForward(pawn) {
+        return Helper.isAbleToMove(pawn) && Helper.isOnBoard(pawn) && pawn.counterAfterMove <= AppSettings.TOTAL_POSITION_ON_BOARD;
+    }
     static isOnBoard(pawn) {
         return pawn && pawn.positionType === TYPE_BOARD;
     }
@@ -59,9 +61,7 @@ class Helper {
         return `${color}Base`;
     }
 
-    static ableToMoveForward(pawn) {
-        return Helper.isAbleToMove(pawn) && Helper.isOnBoard(pawn) && pawn.counterAfterMove <= AppSettings.TOTAL_POSITION_ON_BOARD;
-    }
+
 
     static ableToMoveHome(props) {
         const home = Helper.getHome(props);

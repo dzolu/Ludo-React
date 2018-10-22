@@ -53,28 +53,36 @@ export function moveForward(props) {
     const {
         pawn,
         gameBoard,
-        queue
+        queue,
+        actions
     } = props;
     if (!Helper.ableToMoveForward(pawn)) {
         return;
     }
+    if (Helper.ableToMoveToPosition(pawn, gameBoard[pawn.nextPositionIndex])) {
+        return
+    }
+    actions.addAction({
+        type: Types.MOVE_FORWARD,
+        pawn
+    });
+
+    //todo remove rest
     const pawnInDestination = gameBoard[pawn.nextPositionIndex];
 
-    if (!pawnInDestination) {
-        props.pawnActions.addAction({
-            pawn,
-            types: [{
-                type: Types.MOVE_FORWARD,
+    props.pawnActions.addAction({
+        pawn,
+        types: [{
+            type: Types.MOVE_FORWARD,
+            pawn
+        },
+            {
+                type: Types.CLEAN_AFTER_MOVE_FORWARD,
                 pawn
-            },
-                {
-                    type: Types.CLEAN_AFTER_MOVE_FORWARD,
-                    pawn
-                }
-            ]
-        });
-        return;
-    }
+            }
+        ]
+    });
+
     if (pawnInDestination.color !== pawn.color) {
         const type = Helper.createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
 
@@ -100,22 +108,26 @@ export function moveForward(props) {
 }
 
 export function moveToHome(props) {
+
+    const {pawn, actions} = props;
     const nextPositionIndex = props.pawn.counterAfterMove - TOTAL_POSITION_ON_BOARD - 1;
-    const pawn = Object.assign({}, props.pawn, {nextPositionIndex, nextPositionType: TYPE_HOME});
+    const newPawn = {...pawn, nextPositionIndex, nextPositionType: TYPE_HOME};
 
     if (!Helper.ableToMoveHome({...props, pawn})) {
         return;
     }
     const type = Helper.createActionType(pawn.color, MOVE_TO_HOME);
+    actions.addAction({type, pawn: {...pawn, nextPositionIndex, nextPositionType: TYPE_HOME}});
+    // todo remove rest
     props.pawnActions.addAction({
-        pawn,
+        pawn:newPawn,
         types: [{
             type,
-            pawn
+            pawn:newPawn
         },
             {
                 type: CLEAN_AFTER_MOVE_FORWARD,
-                pawn
+                pawn:newPawn
             }
         ]
     });
@@ -139,8 +151,38 @@ export function unableToLeaveBase(props) {
 export function noPawnOnBoard() {
 }
 
-export function beatPawn() {
+export function beatPawn(props) {
+    const {
+        pawn,
+        gameBoard,
+        actions
+    } = props;
+    const pawnInDestination = gameBoard[pawn.nextPositionIndex];
+    if (!Helper.ableToMoveToPosition(pawn, pawnInDestination)) {
+        return;
+    }
 
+    const type = Helper.createActionType(pawnInDestination.color, Types.BACK_TO_BASE);
+    actions.addAction({
+        type: Types.BEAT_PAWN,
+        pawn: pawnInDestination
+    });
+    // todo remove all after
+    props.pawnActions.addAction({
+        pawn,
+        types: [{
+            type,
+            pawn: pawnInDestination
+        }, {
+            type: Types.MOVE_FORWARD,
+            pawn
+        },
+            {
+                type: Types.CLEAN_AFTER_MOVE_FORWARD,
+                pawn
+            }
+        ]
+    });
 }
 
 export function secondChance() {
