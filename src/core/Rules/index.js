@@ -5,9 +5,8 @@ import {
     moveToHome,
     noPawnOnBoard,
     secondChance,
-    unableToLeaveBase,
     win
 } from "./rules";
 
 
-export default [unableToLeaveBase, leaveBase, moveForward, moveToHome, noPawnOnBoard, beatPawn, secondChance, win];
+export default [leaveBase, moveForward, moveToHome, noPawnOnBoard, beatPawn, secondChance, win];

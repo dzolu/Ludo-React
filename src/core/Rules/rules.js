@@ -117,17 +117,18 @@ export function moveToHome(props) {
         return;
     }
     const type = Helper.createActionType(pawn.color, MOVE_TO_HOME);
-    actions.addAction({type, pawn: {...pawn, nextPositionIndex, nextPositionType: TYPE_HOME}});
+    actions.addAction(
+        {type, pawn: {...pawn, nextPositionIndex, nextPositionType: TYPE_HOME}});
     // todo remove rest
     props.pawnActions.addAction({
-        pawn:newPawn,
+        pawn: newPawn,
         types: [{
             type,
-            pawn:newPawn
+            pawn: newPawn
         },
             {
                 type: CLEAN_AFTER_MOVE_FORWARD,
-                pawn:newPawn
+                pawn: newPawn
             }
         ]
     });
@@ -142,7 +143,7 @@ export function unableToLeaveBase(props) {
     if (!Helper.isInBase(pawn)) {
         return;
     }
-    if (result !== 1 || result !== 6) {
+    if (result !== 6) {
         Notification.add({...props, message: Message.unableToLeaveHome({player: Queue.first(queue), result})});
     }
 

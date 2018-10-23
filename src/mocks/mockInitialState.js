@@ -186,7 +186,7 @@ const greenPawns = {
 };
 
 const greenPawns2 = [greenPawns[0], greenPawns[1], greenPawns[2], greenPawns[3]];
-const Board = {0: bluePawns[0]};
+const Board = {};
 
 
 //players
@@ -243,6 +243,16 @@ export const twoPlayers = {
     queue: [tom, bob],
     gameBoard: Board,
     baseBlue: {
+        0: {
+            id: 0,
+            color: COLOR_BLUE,
+            movement: [],
+            positionIndex: 0,
+            nextPositionIndex: 0,
+            positionType: TYPE_BASE,
+            nextPositionType: TYPE_BASE,
+            counter: 0
+        },
         1: {
             id: 1,
             color: COLOR_BLUE,
