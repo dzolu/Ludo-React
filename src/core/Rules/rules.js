@@ -22,20 +22,6 @@ export function leaveBase(props) {
     const startIndex = Helper.GetStartIndex(pawn.color);
     if (result && Helper.ableToMoveToPosition(pawn, gameBoard[startIndex])) {
         const type = Helper.createActionType(pawn.color, Types.LEAVE_BASE);
-        const newPawn = {
-            ...pawn,
-            nextPositionType: TYPE_BOARD,
-            counterAfterMove: 0,
-            nextPositionIndex: AppSettings[startIndex]
-        };
-        props.pawnActions.addAction({
-            pawn: newPawn,
-            types: [{
-                type,
-                pawn: newPawn
-            }]
-        });
-        // TODO remove code form 25 to 36
         actions.addAction({
                 type,
                 pawn: {
@@ -159,6 +145,10 @@ export function beatPawn(props) {
         actions
     } = props;
     const pawnInDestination = gameBoard[pawn.nextPositionIndex];
+    if(!pawnInDestination){
+        return;
+    }
+
     if (!Helper.ableToMoveToPosition(pawn, pawnInDestination)) {
         return;
     }

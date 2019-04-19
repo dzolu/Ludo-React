@@ -9,5 +9,5 @@ export function throwSix(diceResult) {
 }
 
 export function addAction(action) {
-    return {type: Types.ADD_ACTION2, action}
+    return {type: Types.ADD_ACTION, action}
 }
