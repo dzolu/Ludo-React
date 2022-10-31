@@ -23,11 +23,11 @@ export default function pawnsReducer(state, action) {
     }
 }
 
-function updatePawnsArray(array, action) {
+function updatePawnsArray(array, {action, type}) {
     return array.map( (item, index) => {
-        if(index !== action.pawn.id) {
+        if(index !==action.pawn.id) {
             return item;
         }
-        return pawnReducer(action.pawn, action)    
+        return pawnReducer(action.pawn, type)    
     });
 }
