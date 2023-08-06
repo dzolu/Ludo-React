@@ -12,8 +12,7 @@ class Moves {
         if (movement.type === UNABLE_TO_MOVE) {
             return Notification.notifyError(message);
         }
-       
-        props.actions.dispatchAction(movement, pawn);
+        props.actions.dispatchAction(movement, {pawn});
         
         props.actions.didMakeMove(true);
     }

@@ -9,8 +9,7 @@ const Pawn= (props)=>{
 
 Pawn.propTypes={
     color: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    positionIndex: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired
 };
 
 export default Pawn;
