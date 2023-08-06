@@ -6,15 +6,15 @@ class Moves {
     static makeMove(props) {
         const pawn = Queue.getPawn(props);
         const {movement, message} = pawn;
-        if (!movement || !movement.length) {
+        if (!movement) {
             return;
         }
-        if (movement[0].type === UNABLE_TO_MOVE) {
+        if (movement.type === UNABLE_TO_MOVE) {
             return Notification.notifyError(message);
         }
-        movement.forEach(action => {
-            props.actions.dispatchAction(action.type, action.pawn);
-        });
+       
+        props.actions.dispatchAction(movement, pawn);
+        
         props.actions.didMakeMove(true);
     }
 }

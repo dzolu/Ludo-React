@@ -12,7 +12,8 @@ class PawnFactory{
              positionType,
              nextPositionType,
              counter,
-             counterAfterMove
+             counterAfterMove,
+             movement: null
         }
     }
 }

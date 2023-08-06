@@ -19,8 +19,9 @@ export function leaveBase(props) {
     if (!Helper.isInBase(pawn)) {
         return;
     }
+    
     const startIndex = Helper.GetStartIndex(pawn.color);
-    if (result && Helper.ableToMoveToPosition(pawn, gameBoard[startIndex])) {
+    if (result && /*Helper.isOneOrSix(result) &&*/ Helper.ableToMoveToPosition(pawn, gameBoard[startIndex])) {
         const type = Helper.createActionType(pawn.color, Types.LEAVE_BASE);
         actions.addAction({
                 type,
@@ -28,7 +29,8 @@ export function leaveBase(props) {
                     ...pawn,
                     nextPositionType: TYPE_BOARD,
                     counterAfterMove: 0,
-                    nextPositionIndex: startIndex
+                    nextPositionIndex: startIndex,
+                    movement:Types.LEAVE_BASE
                 }
             }
         )

@@ -18,6 +18,10 @@ class Helper {
         })
     }
 
+    static isOneOrSix(diceNumber){
+        return diceNumber === 1 || diceNumber ===6;
+    }
+    
     static ableToMoveToPosition(pawn, position) {
         return !position || position.color !== pawn.color;
     }
