@@ -9,4 +9,11 @@ import {
 } from "./rules";
 
 
-export default [leaveBase, moveForward, moveToHome, noPawnOnBoard, beatPawn, secondChance, win];
+export default [
+    leaveBase, 
+    moveForward, 
+    moveToHome, 
+    noPawnOnBoard, 
+    beatPawn, 
+    secondChance, 
+    win];
