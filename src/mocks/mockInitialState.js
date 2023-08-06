@@ -57,131 +57,47 @@ const bluePawns2 = [bluePawns[0], bluePawns[1], bluePawns[2], bluePawns[3]];
 
 const redPawns = {
     0: {
-        id: 0,
-        color: COLOR_RED,
-        movement: [],
-        positionIndex: 0,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 0
     },
     1: {
-        id: 1,
-        color: COLOR_RED,
-        movement: [],
-        positionIndex: 1,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 1
     },
     2: {
-        id: 2,
-        color: COLOR_RED,
-        movement: [],
-        positionIndex: 2,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 2
     },
     3: {
-        id: 3,
-        color: COLOR_RED,
-        movement: [],
-        positionIndex: 3,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 3
     }
 };
 
 const redPawns2 = [redPawns[0], redPawns[1], redPawns[2], redPawns[3]];
 const yellowPawns = {
     0: {
-        id: 0,
-        color: COLOR_YELLOW,
-        movement: [],
-        positionIndex: 0,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 0
     },
     1: {
-        id: 1,
-        color: COLOR_YELLOW,
-        movement: [],
-        positionIndex: 1,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 1
     },
     2: {
-        id: 2,
-        color: COLOR_YELLOW,
-        movement: [],
-        positionIndex: 2,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 2
     },
     3: {
-        id: 3,
-        color: COLOR_YELLOW,
-        movement: [],
-        positionIndex: 2,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 3
     }
 };
 const yellowPawns2 = [yellowPawns[0], yellowPawns[1], yellowPawns[2], yellowPawns[3]];
 const greenPawns = {
     0: {
-        id: 0,
-        color: COLOR_GREEN,
-        movement: [],
-        positionIndex: 0,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 0
     },
     1: {
-        id: 1,
-        color: COLOR_GREEN,
-        movement: [],
-        positionIndex: 1,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 1
     },
     2: {
-        id: 2,
-        color: COLOR_GREEN,
-        movement: [],
-        positionIndex: 2,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 2
     },
     3: {
-        id: 3,
-        color: COLOR_GREEN,
-        movement: [],
-        positionIndex: 3,
-        nextPositionIndex: 0,
-        positionType: TYPE_BASE,
-        nextPositionType: TYPE_BASE,
-        counter: 0
+        id: 3
     }
 };
 
@@ -244,44 +160,16 @@ export const twoPlayers = {
     gameBoard: Board,
     baseBlue: {
         0: {
-            id: 0,
-            color: COLOR_BLUE,
-            movement: [],
-            positionIndex: 0,
-            nextPositionIndex: 0,
-            positionType: TYPE_BASE,
-            nextPositionType: TYPE_BASE,
-            counter: 0
+            id: 0
         },
         1: {
-            id: 1,
-            color: COLOR_BLUE,
-            movement: [],
-            positionIndex: 1,
-            nextPositionIndex: 0,
-            positionType: TYPE_BASE,
-            nextPositionType: TYPE_BASE,
-            counter: 0
+            id: 1
         },
         2: {
-            id: 2,
-            color: COLOR_BLUE,
-            movement: [],
-            positionIndex: 2,
-            nextPositionIndex: 0,
-            positionType: TYPE_BASE,
-            nextPositionType: TYPE_BASE,
-            counter: 0
+            id: 2
         },
         3: {
-            id: 3,
-            color: COLOR_BLUE,
-            movement: [],
-            positionIndex: 3,
-            nextPositionIndex: 0,
-            positionType: TYPE_BASE,
-            nextPositionType: TYPE_BASE,
-            counter: 0
+            id: 3
         }
     },
     baseGreen: {},

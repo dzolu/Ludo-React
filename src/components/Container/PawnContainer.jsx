@@ -9,21 +9,18 @@ import Notification from "../../core/Notifications";
 import Message from '../../core/Messages';
 const PawnContainer = (props) => {
     const move = () => {
-        const player=Queue.first(props.queue);
+        const player = Queue.first(props.queue);
         if(props.color !== player.color){
            return Notification.notifyError(Message.wrongPawn(player));
         }
         Application.move(props);
     };
-   
     return (<Pawn {...props} move={move}/>)
 };
 
 function mapStateToProps(state, ownProps) {
     return {
         id: ownProps.id,
-        positionIndex: ownProps.positionIndex,
-        positionType: ownProps.positionType,
         color: ownProps.color,
         result: state.diceResult, 
         queue: state.queue, 

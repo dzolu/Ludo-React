@@ -30,7 +30,7 @@ export function leaveBase(props) {
                     nextPositionType: TYPE_BOARD,
                     counterAfterMove: 0,
                     nextPositionIndex: startIndex,
-                    movement:Types.LEAVE_BASE
+                    movement: type
                 }
             }
         )
