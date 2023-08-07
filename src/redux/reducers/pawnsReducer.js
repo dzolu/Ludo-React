@@ -24,8 +24,8 @@ export default function pawnsReducer(state, action) {
 }
 
 function updatePawnsArray(array, action) {
-    return array.map( (item, index) => {
-        if(index !== action.pawn.id) {
+    return array.map( (item) => {
+        if(item.id !== action.pawn.id) {
             return item;
         }
         return pawnReducer(action.pawn, action.type)    
