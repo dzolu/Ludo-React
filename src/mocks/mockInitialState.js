@@ -14,7 +14,7 @@ const bluePawns = {
     0: {
         id: 0,
         color: COLOR_BLUE,
-        movement: [],
+        movement: null,
         positionIndex: 0,
         nextPositionIndex: 0,
         positionType: TYPE_BOARD,
@@ -25,7 +25,7 @@ const bluePawns = {
     1: {
         id: 1,
         color: COLOR_BLUE,
-        movement: [],
+        movement: null,
         positionIndex: 1,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,
@@ -35,7 +35,7 @@ const bluePawns = {
     2: {
         id: 2,
         color: COLOR_BLUE,
-        movement: [],
+        movement: null,
         positionIndex: 2,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,
@@ -45,7 +45,7 @@ const bluePawns = {
     3: {
         id: 3,
         color: COLOR_BLUE,
-        movement: [],
+        movement: null,
         positionIndex: 3,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,

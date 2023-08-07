@@ -28,6 +28,6 @@ function updatePawnsArray(array, {action, type}) {
         if(index !==action.pawn.id) {
             return item;
         }
-        return pawnReducer(action.pawn, type)    
+        return pawnReducer(action, type)    
     });
 }
