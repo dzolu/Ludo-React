@@ -17,8 +17,8 @@ const bluePawns = {
         movement: null,
         positionIndex: 0,
         nextPositionIndex: 0,
-        positionType: TYPE_BOARD,
-        nextPositionType: TYPE_BOARD,
+        positionType: TYPE_BASE,
+        nextPositionType: TYPE_BASE,
         counter: 0
 
     },
@@ -59,7 +59,7 @@ const redPawns = {
     0: {
         id: 0,
         color: COLOR_RED,
-        movement: [],
+        movement: null,
         positionIndex: 0,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,
@@ -69,7 +69,7 @@ const redPawns = {
     1: {
         id: 1,
         color: COLOR_RED,
-        movement: [],
+        movement: null,
         positionIndex: 1,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,
@@ -79,7 +79,7 @@ const redPawns = {
     2: {
         id: 2,
         color: COLOR_RED,
-        movement: [],
+        movement: null,
         positionIndex: 2,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,
@@ -89,7 +89,7 @@ const redPawns = {
     3: {
         id: 3,
         color: COLOR_RED,
-        movement: [],
+        movement: null,
         positionIndex: 3,
         nextPositionIndex: 0,
         positionType: TYPE_BASE,

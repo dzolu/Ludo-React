@@ -4,7 +4,7 @@ import PawnContainer from "../Container/PawnContainer";
 
 const Position=(props)=>{
     const hasPawn=()=>{
-      return props.posRef && <PawnContainer {...props}/>
+      return !isNaN(props.posRef)  && <PawnContainer {...props}/>
     };
     return  (
             <div className="placeOnBoard">

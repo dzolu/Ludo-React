@@ -5,7 +5,7 @@ export function dispatchAction(type, pawn) {
 }
 
 export function addAction(types) {
-    return {type: Types.ADD_ACTION, ...types}
+    return {...types, type: Types.ADD_ACTION }
 }
 
 export function nextPlayer(queue) {
