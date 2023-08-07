@@ -17,7 +17,7 @@ export default function pawnReducer(pawn, type) {
         case Types.BLUE_MOVE_TO_HOME:
         case Types.GREEN_MOVE_TO_HOME:
         case Types.YELLOW_MOVE_TO_HOME:
-            return {pawn: {...pawn, movement: null}};
+            return {...pawn, movement: null};
         default:
             return pawn;
     }
