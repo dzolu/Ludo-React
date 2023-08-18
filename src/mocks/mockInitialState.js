@@ -242,10 +242,10 @@ export const onePlayers = {
 export const twoPlayers = {
     queue: [tom, bob],
     gameBoard: Board,
-    baseBlue: {0:bluePawns[0].id, 1: bluePawns[1].id, 2: bluePawns[2].id, 3: bluePawns[3].id},
+    baseBlue: {0:{id:bluePawns[0].id, color: bluePawns[0].color}, 1: {id:bluePawns[1].id, color: bluePawns[1].color}, 2: {id:bluePawns[2].id, color: bluePawns[2].color}, 3: {id:bluePawns[3].id, color: bluePawns[3].color}},
     baseGreen: {},
     baseYellow: {},
-    baseRed: {0:redPawns[0].id, 1: redPawns[1].id, 2: redPawns[2].id, 3: redPawns[3].id},
+    baseRed: {0:{id:redPawns[0].id, color: redPawns[0].color}, 1:{id:redPawns[1].id, color: redPawns[1].color}, 2: {id:redPawns[2].id, color: redPawns[2].color}, 3: {id:redPawns[3].id, color: redPawns[3].color}},
     homeYellow: {},
     homeRed: {},
     homeGreen: {},

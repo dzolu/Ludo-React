@@ -9,6 +9,7 @@ export default function playerReducer(state = {}, action) {
         case Types.BLUE_LEAVE_BASE:
         case Types.GREEN_LEAVE_BASE:
         case Types.YELLOW_LEAVE_BASE:
+            return {...state, pawns: pawnsReducer(state.pawns, action)};
         case Types.RED_BACK_TO_BASE:
         case Types.BLUE_BACK_TO_BASE:
         case Types.GREEN_BACK_TO_BASE:
@@ -19,7 +20,7 @@ export default function playerReducer(state = {}, action) {
         case Types.YELLOW_MOVE_TO_HOME:
             return {...state, pawns: pawnsReducer(state.pawns, action)};
         case Types.DID_MAKE_MOVE:
-            return {...state, madeMove: action.flag};
+            return {...state, madeMove: action.flag, pawns: pawnsReducer(state.pawns, action)};
         case Types.NEXT_PLAYER:
             return {...state, madeMove: false, throwDice: false};
         case Types.THROW_DICE:

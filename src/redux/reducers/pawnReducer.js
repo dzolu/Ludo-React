@@ -9,6 +9,29 @@ export default function pawnReducer(pawn, type) {
         case Types.BLUE_LEAVE_BASE:
         case Types.GREEN_LEAVE_BASE:
         case Types.YELLOW_LEAVE_BASE:
+            return {...pawn, movement: null};
+        case Types.RED_BACK_TO_BASE:
+        case Types.BLUE_BACK_TO_BASE:
+        case Types.GREEN_BACK_TO_BASE:
+        case Types.YELLOW_BACK_TO_BASE:
+        case Types.RED_MOVE_TO_HOME:
+        case Types.BLUE_MOVE_TO_HOME:
+        case Types.GREEN_MOVE_TO_HOME:
+        case Types.YELLOW_MOVE_TO_HOME:
+            return {...pawn, movement: null};
+        default:
+            return pawn;
+    }
+}
+
+
+export function boardPawnReducer(pawn, type) {
+    switch (type) {
+        case Types.RED_LEAVE_BASE:
+        case Types.BLUE_LEAVE_BASE:
+        case Types.GREEN_LEAVE_BASE:
+        case Types.YELLOW_LEAVE_BASE:
+            return {color: pawn.color, id: pawn.id}
         case Types.RED_BACK_TO_BASE:
         case Types.BLUE_BACK_TO_BASE:
         case Types.GREEN_BACK_TO_BASE:

@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 import PawnContainer from "../Container/PawnContainer";
 
 const Position=(props)=>{
-    const hasPawn=()=>{
-      return !isNaN(props.posRef)  && <PawnContainer {...props}/>
-    };
     return  (
             <div className="placeOnBoard">
                 <div className={`placeOnBoard__position placeOnBoard__position--${props.color}`}>
-                            {hasPawn()}
+                            {!!props.posRef  && <PawnContainer {...props}/>}
                 </div>
              </div>
              )

@@ -1,24 +1,24 @@
 import * as Types from "../actions/actionTypes";
 import * as AppSettings from "../../AppSettings";
-import pawnReducer from './pawnReducer';
+import pawnReducer, {boardPawnReducer} from './pawnReducer';
 
 export default function gameBoard(state = {}, action) {
     switch (action.type) {
         case Types.RED_LEAVE_BASE:
             return { ...state,
-                [AppSettings.RED_START_INDEX]: pawnReducer(action.pawn, action)
+                [AppSettings.RED_START_INDEX]: boardPawnReducer(action.pawn, action)
             };
         case Types.BLUE_LEAVE_BASE:
             return { ...state,
-                [AppSettings.BLUE_START_INDEX]: pawnReducer(action.pawn, action)
+                [AppSettings.BLUE_START_INDEX]: {color: action.pawn.color, id: action.pawn.id}
             };
         case Types.GREEN_LEAVE_BASE:
             return { ...state,
-                [AppSettings.GREEN_START_INDEX]: pawnReducer(action.pawn, action)
+                [AppSettings.GREEN_START_INDEX]: {color: action.pawn.color, id: action.pawn.id}
             };
         case Types.YELLOW_LEAVE_BASE:
             return { ...state,
-                [AppSettings.YELLOW_START_INDEX]: pawnReducer(action.pawn, action)
+                [AppSettings.YELLOW_START_INDEX]: {color: action.pawn.color, id: action.pawn.id}
             };
         case Types.MOVE_FORWARD:
             return { ...state,
@@ -36,3 +36,4 @@ export default function gameBoard(state = {}, action) {
             return state;
     }
 }
+
